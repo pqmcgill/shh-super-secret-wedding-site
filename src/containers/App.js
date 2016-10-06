@@ -1,19 +1,38 @@
 import React, { Component } from 'react';
+import * as excitementActions from '../actions/excitement';
+import Excitement from '../components/Excitement';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import logo from '../assets/logo.svg';
 import './App.css';
 
-class App extends Component {
+export class App extends Component {
+	onHypeChange = e => {
+		this.props.updateHypeLevel(e.target.value);
+	}
+
   render() {
-    return (
+		const { hypeLevel } = this.props
+		return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to the official STAMP wedding site!!!</h2>
+          <h1>Welcome to the official STAMP wedding site!!!</h1>
         </div>
         <p className="App-intro">Coming soon!...</p>
+				<Excitement level={ hypeLevel } onChange={ this.onHypeChange }/>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = ({ hypeLevel }) => {
+	return {
+		hypeLevel
+	};
+};
+
+const mapDispatchToProps = dispatch =>
+	bindActionCreators(excitementActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
