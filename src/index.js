@@ -5,7 +5,7 @@ import configureStore from './store';
 import App from './containers/App';
 import './index.css';
 
-const initialState = { hypeLevel: 'Very!' };
+const initialState = {};
 const store = configureStore(initialState);
 
 ReactDOM.render(

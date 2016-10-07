@@ -6,3 +6,9 @@ export const updateHypeLevel = hype => {
 		level: hype
 	};
 };
+
+export const loadingHypeLevel = () => {
+	return {
+		type: types.LOADING_HYPE
+	};
+};
