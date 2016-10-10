@@ -1,9 +1,21 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
-const enhancer = applyMiddleware(thunk);
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default state => {
-	return createStore(rootReducer, state, enhancer);
+const enhancer = composeEnhancer(
+	applyMiddleware(thunk)
+);
+
+export default function configureStore (state) {
+	const store = createStore(rootReducer, state, enhancer);
+
+	if(module.hot) {
+		module.hot.accept('../reducers', () => 
+			store.replaceReducer(require('../reducers').default)
+		);
+	}
+
+	return store;
 };

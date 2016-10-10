@@ -1,20 +1,10 @@
-import * as types from '../ActionTypes';
 import { combineReducers } from 'redux';
-
-const initialState = 'gosh darn';
-
-export const hypeLevel =  (state = initialState, action) => {
-	const { level, type } = action;
-	switch(type) {
-		case types.UPDATE_HYPE:
-			return level;
-		default:
-			return state;
-	}
-}
+import hypeLevel from './hypeLevel';
+import messages from './messages';
 
 const rootReducer = combineReducers({
-	hypeLevel	
+	hypeLevel,
+	messages	
 });
 
 export default rootReducer;

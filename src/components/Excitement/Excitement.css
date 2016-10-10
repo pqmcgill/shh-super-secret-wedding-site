@@ -1,0 +1,13 @@
+.excite-lvl {
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px;
+	height: 30px;
+	font-size: 18px;
+	color: grey;
+}
+
+.bold-red {
+	color: #ffbdd6;
+	font-size: 25px;
+}
