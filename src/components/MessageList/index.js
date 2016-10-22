@@ -10,4 +10,8 @@ const MessageList = ({ messages = [] }) => {
 	);
 };
 
+MessageList.propTypes = {
+	messages: PropTypes.array.isRequired
+};
+
 export default MessageList;

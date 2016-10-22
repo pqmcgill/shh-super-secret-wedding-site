@@ -1,4 +1,3 @@
-import { createSelector } from 'reselect';
 import * as types from '../../ActionTypes';
 
 const initState = { all: [], byId: {} };
