@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { App } from './';
 
 it('renders without crashing', () => {
-	mount(<App />);
+	shallow(<App />);
 });
 
 it('should have an onExcitementChange handler which envokes the prop with the e.target.val', () => {

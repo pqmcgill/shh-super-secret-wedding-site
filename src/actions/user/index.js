@@ -30,7 +30,11 @@ export const login = (name, password) => {
 			body: JSON.stringify({ name: name, password: password })
 		})
 		.then(res => res.json())
-		.then(data => dispatch(loginSuccess(data.user)))
+		.then(data => {
+			return data.success ?
+				dispatch(loginSuccess(data.user)) :
+				dispatch(loginFailure(data));
+		})
 		.catch(err => dispatch(loginFailure(err)));
 	};
 };
