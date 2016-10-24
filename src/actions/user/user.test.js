@@ -18,7 +18,7 @@ describe('foo', () => {
 
 	it('should have login action which makes successful api call to get user data dispatches success action', () => {
 		fetchMock.post('http://localhost:4000/api/user/authenticate', {
-			body: { user: success_res }
+			body: { success: true, user: success_res }
 		});
 
 		const expectedActions = [
@@ -36,12 +36,30 @@ describe('foo', () => {
 	it('should dispatch login failure action upon unauthorized call', () => {
 		fetchMock.post('http://localhost:4000/api/user/authenticate', {
 			status: 401,
-			throws: { success: false }
+			body: { success: false }
 		});
 
 		const expectedActions = [
 			{ type: types.LOGIN_PENDING },
 			{ type: types.LOGIN_FAILURE, err: failure_res }
+		];
+
+		const store = mockStore({ user: null });
+		return store.dispatch(actions.login(user.name, user.password))
+			.then(() => {
+				expect(store.getActions()).toEqual(expectedActions);
+			});
+	});
+
+	it('should dispatch login failure action upon server error', () => {
+		fetchMock.post('http://localhost:4000/api/user/authenticate', {
+			status: 500,
+			throws: { msg: 'internal server error' }
+		});
+
+		const expectedActions = [
+			{ type: types.LOGIN_PENDING },
+			{ type: types.LOGIN_FAILURE, err: { msg: 'internal server error' }}
 		];
 
 		const store = mockStore({ user: null });

@@ -7,10 +7,15 @@ import logo from '../../assets/logo.svg';
 import Excitement from '../../components/Excitement';
 import { getAllMessages } from '../../reducers/messages/selectors';
 import './App.css';
+import RSVPForm from '../RSVPForm';
 
 export class App extends Component {
 	onHypeChange = e => {
 		this.props.updateHypeLevel(e.target.value);
+	}
+
+	onSubmit = val => {
+		console.log(val);
 	}
 
   render() {
@@ -27,6 +32,7 @@ export class App extends Component {
 					addMessage={ addMessage }
 					messages={ messages }
 					level={ hypeLevel } />
+				<RSVPForm onSubmit={ this.onSubmit } />
       </div>
     );
   }
