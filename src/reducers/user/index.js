@@ -6,7 +6,7 @@ const statuses = {
 	PENDING: 'PENDING'
 };
 
-const unauthState = { status: statuses.UNAUTH };
+const unauthState = { status: statuses.UNAUTH, access: 'guest' };
 
 export default (state = unauthState, action) => {
 	switch(action.type) {

@@ -1,27 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router';
 import { Provider } from 'react-redux';
-import routes from './routes';
 import configureStore from './store';
+import App from './containers/App';
 import './index.css';
 
 const initialState = {};
 const store = configureStore(initialState);
 
-function renderApp(CurrentApp) {
-	ReactDOM.render(
-		<Provider store={ store }>
-			<CurrentApp />
-		</Provider>,
-		document.getElementById('root')
-	);
+const renderApp = CurrentApp => {
+  ReactDOM.render(
+    <Provider store={ store }>
+      <BrowserRouter>
+        <CurrentApp />
+      </BrowserRouter>
+    </Provider>,
+    document.getElementById('root')
+  );
 }
 
-renderApp(routes);
+renderApp(App);
 
 if (module.hot) {
-	module.hot.accept('./routes', () => {
-		const nextApp = require('./routes').default;
+  module.hot.accept('./containers/App', () => {
+    const nextApp = require('./containers/App').default;
 		renderApp(nextApp);
 	});
 }

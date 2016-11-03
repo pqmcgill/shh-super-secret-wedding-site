@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../containers/App/App.css';
+import '../../containers/LandingPage/LandingPage.css';
 import MessageList from '../MessageList';
 import './Excitement.css';
 

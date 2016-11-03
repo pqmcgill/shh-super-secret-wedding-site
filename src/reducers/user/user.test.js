@@ -1,7 +1,7 @@
 import * as types from '../../ActionTypes';
 import users from './';
 
-const unauthState = { status: 'UNAUTH' };
+const unauthState = { status: 'UNAUTH', access: 'guest' };
 
 it('should be defined', () => {
 	expect(users).not.toBe(undefined);
