@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import * as types from '../../../ActionTypes';
 
 export const byId = (state = {}, action) => {
-	const { guest, guests, id } = action;
+	const { guest, guests, _id } = action;
 	switch(action.type) {
 		case types.CLEAR_ADMIN_STATE:
 			return {};
@@ -13,13 +13,11 @@ export const byId = (state = {}, action) => {
 			return { ...state, [guest._id]: guest };
 
 		case types.DELETE_GUEST:
-			console.log(state);
 			const newState = Object.keys(state)
-				.filter(key => key !== id)
+				.filter(key => key !== _id)
 				.reduce((next, guestId) => {
 					return { ...next, [guestId]: state[guestId] };
 				}, {});
-			console.log(newState);
 			return newState;
 		default: return state;
 	}
@@ -32,12 +30,12 @@ export const all = (state = [], action) => {
 			return [];
 
 		case types.ADD_GUEST:
-			return [ ...state, action.guest.id ];
+			return [ ...state, action.guest._id ];
 
 		case types.DELETE_GUEST:
 			return [ 
-				...state.slice(0, state.indexOf(action.id)),
-				...state.slice(state.indexOf(action.id) + 1, state.length)
+				...state.slice(0, state.indexOf(action._id)),
+				...state.slice(state.indexOf(action._id) + 1, state.length)
 			];
 
 		default: return state;

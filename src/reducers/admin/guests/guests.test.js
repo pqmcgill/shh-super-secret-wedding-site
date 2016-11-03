@@ -20,7 +20,7 @@ it('should respond to ADD_GUEST by adding a guest object to the state', () => {
 	const action = { 
 		type: types.ADD_GUEST,
 		guest: {
-			id: 'abc123',
+			_id: 'abc123',
 			name: 'user1',
 			password: 'pass1',
 			plusOne: 'myWife',
@@ -43,7 +43,7 @@ it('should respond to EDIT_GUEST by editing the guest with the given id', () => 
 	const action = {
 		type: types.EDIT_GUEST,
 		guest: {
-			id: 'abc123',
+			_id: 'abc123',
 			name: 'user2',
 			password: 'pass2',
 			plusOne: 'myHusband',
@@ -52,7 +52,7 @@ it('should respond to EDIT_GUEST by editing the guest with the given id', () => 
 	};
 	const prevById = {
 		'abc123': { 
-			id: 'abc123', 
+			_id: 'abc123', 
 			name: 'user1', 
 			password: 'pass1', 
 			plusOne: 'myWife', 
@@ -72,14 +72,11 @@ it('should respond to EDIT_GUEST by editing the guest with the given id', () => 
 it('should respond to DELETE_GUEST by removing that guest from state', () => {
 	const action = {
 		type: types.DELETE_GUEST,
-		guest: { 
-			id: '123',
-			name: 'Pat'
-		}
-	};
+    _id: '123'
+  };
 	const prevById = {
 		'123': {
-			id: '123',
+			_id: '123',
 			name: 'Pat'
 		}
 	};
@@ -105,7 +102,7 @@ it('should respond to LOADING_GUEST_CHANGES by setting loading state to true', (
 it('should flip loading state to false for any other Guest action type', () => {
 	const nonLoadingTypes = ['ADD_GUEST','ADD_GUEST_FAILURE','DELETE_GUEST','DELETE_GUEST_FAILURE','EDIT_GUEST','EDIT_GUEST_FAILURE','UPLOAD_GUESTS','UPLOAD_GUESTS_FAILURE'];
 	nonLoadingTypes.forEach(type => {
-		const action = { type, guest: { id: '123' }};
+		const action = { type, guest: { _id: '123' }};
 		const prevState = true;
 		const expectedState = false;
 		const nextState = loading(prevState, action);
@@ -116,7 +113,7 @@ it('should flip loading state to false for any other Guest action type', () => {
 it('should respond to unknown action type by returning state as is', () => {
 	const action = {
 		type: types.UNKNOWN,
-		guest: { id: '12345' }
+		guest: { _id: '12345' }
 	};
 	const nextById = byId(initialById, action);
 	const nextAll = all(initialAll, action);

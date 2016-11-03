@@ -67,7 +67,7 @@ class GuestManagement extends Component {
 	}
 
 	render () {
-		const { loading } = this.props;
+    // const { loading } = this.props;
 		console.log(this.props.guests);
 		const guestListItems = this.props.guests.map(guest => {
 			return (
