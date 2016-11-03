@@ -1,10 +1,9 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Link } from 'react-router';
 import Form from './RSVPFormComponent';
-import * as userActions from '../../actions/user';
+import { login } from '../../actions/user';
 
 const RSVPForm = reduxForm({
 	form: 'rsvp'
@@ -27,13 +26,6 @@ const RSVPFormContainer = ({ login, user }) => {
 	);
 };
 
-const mapStateToProps = state => ({
-	user: state.user
-});
-
-const mapDispatchToProps = dispatch => 
-	bindActionCreators({
-		login: userActions.login
-	}, dispatch)
-
+const mapStateToProps = ({ user }) => ({ user });
+const mapDispatchToProps = { login }; 
 export default connect(mapStateToProps, mapDispatchToProps)(RSVPFormContainer);

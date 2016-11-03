@@ -22,7 +22,6 @@ const loginPending = () => {
 
 export const login = (name, password) => {
 	return dispatch => {
-		console.log('dispatching pending... ' + name + ' ' + password);
 		dispatch(loginPending());
 		return fetch('http://localhost:4000/api/user/authenticate', {
 			method: 'POST',

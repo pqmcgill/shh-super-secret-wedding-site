@@ -11,7 +11,7 @@ const user = { name: 'Pat', password: 'foo' };
 const success_res = { name: 'Pat', access: 'admin', token: 'abc' };
 const failure_res = { success: false };
 
-describe('foo', () => {
+describe('User', () => {
 	afterEach(() => {
 		fetchMock.restore();
 	});

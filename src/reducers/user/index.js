@@ -19,6 +19,7 @@ export default (state = unauthState, action) => {
 			return {
 				status: statuses.PENDING
 			};
+		case types.UNAUTHORIZED:
 		case types.LOGIN_FAILURE:
 			return unauthState
 		default: return state;

@@ -34,7 +34,8 @@ export default ComposedComponent => {
 	} 
 
 	const mapStateToProps = state => ({
-		access: state.user.access
+		access: state.user.access,
+		token: state.user.token
 	});
 
 	return connect(mapStateToProps)(AdminOnly);

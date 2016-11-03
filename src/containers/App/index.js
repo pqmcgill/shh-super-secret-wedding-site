@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import * as excitementActions from '../../actions/excitement';
-import * as messageActions from '../../actions/message';
+import { addMessage } from '../../actions/message';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import logo from '../../assets/logo.svg';
 import Excitement from '../../components/Excitement';
 import { getAllMessages } from '../../reducers/messages/selectors';
@@ -12,10 +10,6 @@ import RSVPForm from '../RSVPForm';
 export class App extends Component {
 	onHypeChange = e => {
 		this.props.updateHypeLevel(e.target.value);
-	}
-
-	onSubmit = val => {
-		console.log(val);
 	}
 
   render() {
@@ -32,7 +26,7 @@ export class App extends Component {
 					addMessage={ addMessage }
 					messages={ messages }
 					level={ hypeLevel } />
-				<RSVPForm onSubmit={ this.onSubmit } />
+				<RSVPForm />
       </div>
     );
   }
@@ -45,10 +39,8 @@ const mapStateToProps = (state) => {
 	};
 };
 
-const mapDispatchToProps = dispatch =>
-	bindActionCreators({
-		...excitementActions, 
-		...messageActions
-	}, dispatch);
+const mapDispatchToProps = {
+	addMessage
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
