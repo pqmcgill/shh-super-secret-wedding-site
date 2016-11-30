@@ -33,10 +33,10 @@ export const all = (state = [], action) => {
 			return [ ...state, action.guest._id ];
 
 		case types.DELETE_GUEST:
-			return [ 
-				...state.slice(0, state.indexOf(action._id)),
-				...state.slice(state.indexOf(action._id) + 1, state.length)
-			];
+      return state.filter(id => id !== action._id);
+
+    case types.UPLOAD_GUESTS:
+      return Object.keys(action.guests);
 
 		default: return state;
 	}

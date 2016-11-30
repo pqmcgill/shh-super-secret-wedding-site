@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router';
 import { Provider } from 'react-redux';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import configureStore from './store';
 import App from './containers/App';
 import './index.css';
@@ -13,7 +14,9 @@ const renderApp = CurrentApp => {
   ReactDOM.render(
     <Provider store={ store }>
       <BrowserRouter>
-        <CurrentApp />
+        <MuiThemeProvider>
+          <CurrentApp />
+        </MuiThemeProvider>
       </BrowserRouter>
     </Provider>,
     document.getElementById('root')

@@ -21,7 +21,7 @@ const RSVPFormContainer = ({ login, user }) => {
 				<p>Welcome, { user.name }</p> :
 				<p>Please RSVP!</p>
 			}
-			{ user.access === 'admin' ? <Link to='/admin'>manage guests</Link> : '' }
+			{ user.access === 'admin' ? <Link to='/guest-management'>manage guests</Link> : '' }
 		</div>
 	);
 };

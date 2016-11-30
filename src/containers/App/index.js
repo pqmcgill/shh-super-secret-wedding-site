@@ -7,6 +7,6 @@ import GuestManagement from '../GuestManagement';
 export default (props) => (
   <div>
     <Match exactly pattern='/' component={ LandingPage } />
-    <Match pattern='/admin' component={ AdminOnly(GuestManagement) }/>
+    <Match pattern='/guest-management' component={ AdminOnly(GuestManagement) }/>
   </div>
 );

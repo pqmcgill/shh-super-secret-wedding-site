@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import * as types from '../../ActionTypes';
 import * as actions from './';
 
+// this font is italic
 const middleware = [ thunk ];
 const mockStore = configureMockStore(middleware);
 const guests = {
@@ -18,7 +19,7 @@ describe('Admin Guest Management', () => {
 		fetchMock.restore();
 	});
 
-	it('should have a getGuests action which makes api call to get guests and dispatches success action', () => {
+	it('should have a loadGuests action which makes api call to get guests and dispatches success action', () => {
 		fetchMock.get('http://localhost:4000/api/user', {
 			body: { success: true, guests }
 		});
@@ -39,7 +40,7 @@ describe('Admin Guest Management', () => {
 		});
     
     ///////////////TODO: figure out why this is undefined vvv 
-		console.log('TODO: figure out why this is undefined', JSON.stringify(store.dispatch(actions.getGuests())));
+		console.log('TODO: figure out why this is undefined', JSON.stringify(store.dispatch(actions.loadGuests())));
     expect(true).toEqual(true);
 	}); 
 });

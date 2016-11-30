@@ -1,112 +1,83 @@
-import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form'; 
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { clearGuests, getGuests, addGuest, deleteGuest } from '../../actions/admin';
+import { loadGuests, deleteGuest, addGuest } from '../../actions/admin';
+import { getGuests } from '../../reducers/admin/guests/selectors'
 
-const Guest = ({ details, onDelete }) => {
-	const renderedDetails = Object.keys(details).map((detail) => {
-		return <span key={detail}>{detail}: {details[detail]}, </span>;
-	});
+// material elements
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import Paper from 'material-ui/Paper';
 
-	const handleDelete = () => {
-		onDelete(details._id);
-	};
+import './GuestManagement.css';
 
-	return (
-		<li>
-			{ renderedDetails }
-			<button onClick={ handleDelete }>delete</button>
-		</li>
-	);
+const propTypes = {
+  token: PropTypes.string.isRequired,
+  guests: PropTypes.array.isRequired,
+  addGuest: PropTypes.func.isRequired,
+  loadGuests: PropTypes.func.isRequired,
+  deleteGuest: PropTypes.func.isRequired
 };
 
-const AddGuestForm = reduxForm({
-	form: 'addGuest'
-})(({ handleSubmit, reset }) => {
-	const submit = (e) => {
-		handleSubmit(e);
-		reset();
-	};
-	return (
-		<form onSubmit={ submit }>
-			<span>
-				<label htmlFor="username">username</label>
-				<Field name="name" component="input" type="text" />
-			</span>
-			<span>
-				<label htmlFor="affilliation">affilliation</label>
-				<Field name="affilliation" component="input" type="text" />
-			</span>
-			<button type="submit">Add</button>
-		</form>
-	);
+export class GuestManagement extends Component {
+  constructor (props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.loadGuests(this.props.token);
+  }
+
+  handleDelete (id) {
+    this.props.deleteGuest(id, this.props.token);
+  }
+
+  render() {
+    const { guests } = this.props;
+    const guestList = guests.map((guest, i) => {
+      return (
+        <TableRow key={i}>
+          <TableRowColumn>{ guest.name }</TableRowColumn> 
+          <TableRowColumn>{ guest.password }</TableRowColumn>
+          <TableRowColumn>{ guest.affilliation }</TableRowColumn>
+          <TableRowColumn>not yet</TableRowColumn>
+          <TableRowColumn>
+            <button className="delete" onClick={ this.handleDelete.bind(null, guest._id) }>x</button>
+          </TableRowColumn>
+        </TableRow>
+        );
+    });
+    return (
+      <Paper className="guestManagement" zDepth={1}>
+        <h2>Here you can manage your guest list</h2>
+        <Table selectable={ false }>
+          <TableHeader>
+            <TableRow>
+              <TableHeaderColumn>Guest Name</TableHeaderColumn>
+              <TableHeaderColumn>Password</TableHeaderColumn>
+              <TableHeaderColumn>Affilliation</TableHeaderColumn>
+              <TableHeaderColumn>RSVP'd</TableHeaderColumn>
+              <TableHeaderColumn></TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
+          <TableBody className="listBody">
+            { guestList }
+          </TableBody>
+        </Table>
+      </Paper>
+    );
+  }
+};
+
+GuestManagement.propTypes = propTypes;
+
+const mapStateToProps = state => ({
+  guests: getGuests(state)
 });
 
-class GuestManagement extends Component {
-	constructor (props) {
-		super(props);
-		this.handleAdd = this.handleAdd.bind(this);
-		this.deleteGuest = this.deleteGuest.bind(this);
-	}
-
-	deleteGuest(id) { 
-		this.props.deleteGuest(id, this.props.token);
-	}
-
-	componentDidMount() {
-		this.props.getGuests(this.props.token);
-	}
-
-	componentWillUnmount() {
-		this.props.clearGuests();
-	}
-
-	handleAdd (guest) {
-		console.log('before adding guest', guest);
-		this.props.addGuest(guest, this.props.token);
-	}
-
-	render () {
-    // const { loading } = this.props;
-		console.log(this.props.guests);
-		const guestListItems = this.props.guests.map(guest => {
-			return (
-				<Guest details={ guest } 
-					onDelete={ this.deleteGuest }
-					key={ guest._id }
-				/>
-			)
-		});
-
-		return (
-			<div>
-				<h1>Admin</h1>
-				<div id="manage-guests">
-					<h2>Here you can manage your guests</h2>
-					<ul>
-						{ guestListItems }
-					</ul>
-					<AddGuestForm onSubmit={ this.handleAdd } />
-				</div>
-			</div>
-		);
-	}
-};
-
-const mapStateToProps = state => {
-	return {
-		loading: state.admin.guests.loading,
-		guests: Object.keys(state.admin.guests.byId).map(key => state.admin.guests.byId[key])
-	};
-};
-
 const mapDispatchToProps = {
-		getGuests,
-		clearGuests,
-		addGuest,
-		deleteGuest
+  loadGuests,
+  deleteGuest,
+  addGuest
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(GuestManagement); 
-
-//export default GuestManagement;
+export default connect(mapStateToProps, mapDispatchToProps)(GuestManagement);

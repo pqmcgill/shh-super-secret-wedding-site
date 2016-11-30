@@ -19,25 +19,24 @@ const addGuestFailure = () => {
 	};
 };
 
-const getGuestsSuccess = (guests) => {
+const loadGuestsSuccess = (guests) => {
 	return {
 		type: types.UPLOAD_GUESTS,
 		guests
 	};
 };
 
-const getGuestsFailure = (err) => {
+const loadGuestsFailure = (err) => {
 	return {
 		type: types.UPLOAD_GUESTS_FAILURE,
 		err
 	};
 };
 
-const deleteGuestSuccess = (id) => {
-	console.log(id);
+const deleteGuestSuccess = (_id) => {
 	return {
 		type: types.DELETE_GUEST,
-		id
+		_id
 	};
 };
 
@@ -49,7 +48,7 @@ const deleteGuestFailure = (err) => {
 };
 
 // API
-export const getGuests = (token) => {
+export const loadGuests = (token) => {
 	return dispatch => {
 		dispatch(requestPending());
 		fetch('http://localhost:4000/api/user', {
@@ -60,13 +59,12 @@ export const getGuests = (token) => {
 			}
 		})
 		.then(res => res.json())
-		.then(data => dispatch(getGuestsSuccess(data.guests)))
-		.catch(err => dispatch(getGuestsFailure(err)));
+		.then(data => dispatch(loadGuestsSuccess(data.guests)))
+		.catch(err => dispatch(loadGuestsFailure(err)));
 	};
 };
 
 export const addGuest = (guest, token) => {
-	console.log('adding guest', guest);
 	return dispatch => {
 		dispatch(requestPending());
 		fetch('http://localhost:4000/api/user', {
@@ -79,13 +77,11 @@ export const addGuest = (guest, token) => {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data.success);
 			return data.success ?
 				dispatch(addGuestSuccess(data.guest)) :
 				dispatch(addGuestFailure(data))
 		})
 		.catch(err => {
-			console.log('error:', err);
 			return dispatch(addGuestFailure(err));
 		});
 	};
@@ -97,10 +93,10 @@ export const clearGuests = () => {
 	};
 };
 
-export const deleteGuest = (id, token) => {
+export const deleteGuest = (_id, token) => {
 	return dispatch => {
 		dispatch(requestPending());
-		fetch('http://localhost:4000/api/user/' + id, {
+		fetch('http://localhost:4000/api/user/' + _id, {
 			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
@@ -109,9 +105,8 @@ export const deleteGuest = (id, token) => {
 		})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data);
 			return data.success ?
-				dispatch(deleteGuestSuccess(id)) :
+				dispatch(deleteGuestSuccess(_id)) :
 				dispatch(deleteGuestFailure(data));
 		})
 		.catch(err => {
