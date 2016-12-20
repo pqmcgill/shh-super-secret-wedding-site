@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { loadGuests, deleteGuest, addGuest } from '../../actions/admin';
 import { getGuests } from '../../reducers/admin/guests/selectors'
+import AddGuestForm from './addGuestForm';
 
 // material elements
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
@@ -49,6 +50,7 @@ export class GuestManagement extends Component {
     return (
       <Paper className="guestManagement" zDepth={1}>
         <h2>Here you can manage your guest list</h2>
+				<AddGuestForm />
         <Table selectable={ false }>
           <TableHeader>
             <TableRow>
