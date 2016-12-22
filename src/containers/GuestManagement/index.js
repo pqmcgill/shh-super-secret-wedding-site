@@ -39,7 +39,7 @@ export class GuestManagement extends Component {
         <TableRow key={i}>
           <TableRowColumn>{ guest.name }</TableRowColumn> 
           <TableRowColumn>{ guest.password }</TableRowColumn>
-          <TableRowColumn>{ guest.affilliation }</TableRowColumn>
+          <TableRowColumn>{ guest.affiliation }</TableRowColumn>
           <TableRowColumn>not yet</TableRowColumn>
           <TableRowColumn>
             <button className="delete" onClick={ this.handleDelete.bind(null, guest._id) }>x</button>
@@ -56,7 +56,7 @@ export class GuestManagement extends Component {
             <TableRow>
               <TableHeaderColumn>Guest Name</TableHeaderColumn>
               <TableHeaderColumn>Password</TableHeaderColumn>
-              <TableHeaderColumn>Affilliation</TableHeaderColumn>
+              <TableHeaderColumn>Affiliation</TableHeaderColumn>
               <TableHeaderColumn>RSVP'd</TableHeaderColumn>
               <TableHeaderColumn></TableHeaderColumn>
             </TableRow>
