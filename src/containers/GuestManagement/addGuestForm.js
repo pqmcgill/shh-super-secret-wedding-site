@@ -3,19 +3,44 @@ import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { addGuest } from '../../actions/admin';
 import { Field } from 'redux-form';
+import RaisedButton from 'material-ui/RaisedButton';
+import MenuItem from 'material-ui/MenuItem';
+import { SelectField, TextField } from 'redux-form-material-ui';
 
 const Form = ({ handleSubmit, reset }) => {
 	const submit = e => {
+    console.log(e);
 		handleSubmit(e);
 		reset();
 	}
-	return (
-		<form onSubmit={ submit }>
-			<div>
-				<label htmlFor="username">username</label>
-				<Field name="username" component="input" type="text" />
-			</div>
-			<button type="submit">Add Guest</button>
+
+  const formStyle = { paddingLeft: '15px' };
+  const fieldStyle = { margin: '0 10px' };
+  const selectStyle = { ...fieldStyle, verticalAlign: 'bottom' };
+
+  return (
+    <form style={ formStyle } onSubmit={ submit }>
+      <span>
+        <Field 
+          style={ fieldStyle } 
+          name="username" 
+          component={ TextField } 
+          type="text" 
+          floatingLabelText="Guest name"
+        />
+      </span>
+      <span>
+        <Field style={ selectStyle } name="affiliation" component={ SelectField } floatingLabelText="Select an Affiliation">
+          <MenuItem value="SAM_FRIEND" primaryText="Sam's Friend" />
+          <MenuItem value="SAM_FAM" primaryText="Sam's Family" />
+          <MenuItem value="PAT_FRIEND" primaryText="Pat's Friend" />
+          <MenuItem value="PAT_FAM" primaryText="Pat's Family" />
+          <MenuItem value="OTHER" primaryText="Other" />
+        </Field>
+      </span>
+      <span>
+        <RaisedButton style={ fieldStyle } label="Primary" primary={true} type="submit" /> 
+      </span>
 		</form>
 	);
 };
