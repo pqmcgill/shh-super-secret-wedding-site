@@ -37,10 +37,13 @@ export class GuestManagement extends Component {
     const guestList = guests.map((guest, i) => {
       return (
         <TableRow key={i}>
-          <TableRowColumn>{ guest.name }</TableRowColumn> 
+          <TableRowColumn>{ guest.username }</TableRowColumn> 
           <TableRowColumn>{ guest.password }</TableRowColumn>
-          <TableRowColumn>{ guest.affilliation }</TableRowColumn>
-          <TableRowColumn>not yet</TableRowColumn>
+          <TableRowColumn>{ guest.guestName }</TableRowColumn>
+          <TableRowColumn>{ guest.guestConfirmation ? 'yes' : 'no' }</TableRowColumn>
+          <TableRowColumn>{ guest.plusOneName }</TableRowColumn>
+          <TableRowColumn>{ guest.plusOneConfirmation ? 'yes': 'no' }</TableRowColumn>
+          <TableRowColumn>{ guest.affiliation }</TableRowColumn>
           <TableRowColumn>
             <button className="delete" onClick={ this.handleDelete.bind(null, guest._id) }>x</button>
           </TableRowColumn>
@@ -51,17 +54,20 @@ export class GuestManagement extends Component {
       <Paper className="guestManagement" zDepth={1}>
         <h2>Here you can manage your guest list</h2>
 				<AddGuestForm />
-        <Table selectable={ false }>
-          <TableHeader>
+        <Table selectable={false}>
+          <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
-              <TableHeaderColumn>Guest Name</TableHeaderColumn>
+              <TableHeaderColumn>User Name</TableHeaderColumn>
               <TableHeaderColumn>Password</TableHeaderColumn>
-              <TableHeaderColumn>Affilliation</TableHeaderColumn>
-              <TableHeaderColumn>RSVP'd</TableHeaderColumn>
+              <TableHeaderColumn>Primary Guest Name</TableHeaderColumn>
+              <TableHeaderColumn>Primary Guest RSVP'd</TableHeaderColumn>
+              <TableHeaderColumn>Plus One Name</TableHeaderColumn>
+              <TableHeaderColumn>Plus One RSVP'd</TableHeaderColumn>
+              <TableHeaderColumn>Affiliation</TableHeaderColumn>
               <TableHeaderColumn></TableHeaderColumn>
             </TableRow>
           </TableHeader>
-          <TableBody className="listBody">
+          <TableBody className="listBody" displayRowCheckbox={false}>
             { guestList }
           </TableBody>
         </Table>

@@ -11,14 +11,14 @@ const RSVPForm = reduxForm({
 
 const RSVPFormContainer = ({ login, user }) => {
 	const handleSubmit = val => {
-		login(val.name, val.password);
+		login(val.username, val.password);
 	};
 
 	return (
 		<div>
 			<RSVPForm onSubmit={ handleSubmit } />
-			{ user.name ?
-				<p>Welcome, { user.name }</p> :
+			{ user.username ?
+				<p>Welcome, { user.username }</p> :
 				<p>Please RSVP!</p>
 			}
 			{ user.access === 'admin' ? <Link to='/guest-management'>manage guests</Link> : '' }

@@ -26,7 +26,10 @@ const AddGuestForm = reduxForm({
 
 const AddGuestFormContainer = ({ addGuest, token }) => {
 	const handleSubmit = val => {
-		addGuest({ name: val.username }, token);
+    const guests = val.username.split('.');
+    const guestName = guests[0];
+    const plusOneName = guests[1] || '';
+		addGuest({ ...val, guestName, plusOneName }, token);
 	};
 
 	return (

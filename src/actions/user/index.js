@@ -20,13 +20,13 @@ const loginPending = () => {
 	};
 };
 
-export const login = (name, password) => {
+export const login = (username, password) => {
 	return dispatch => {
 		dispatch(loginPending());
 		return fetch('http://localhost:4000/api/user/authenticate', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ name: name, password: password })
+			body: JSON.stringify({ username, password })
 		})
 		.then(res => res.json())
 		.then(data => {

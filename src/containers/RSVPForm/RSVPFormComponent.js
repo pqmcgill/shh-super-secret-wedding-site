@@ -9,8 +9,8 @@ const Form = ({ handleSubmit, reset }) => {
 	return (
 		<form onSubmit={ submit }>
 			<div>
-				<label htmlFor="name">username</label>
-				<Field name="name" component="input" type="text" />
+				<label htmlFor="username">username</label>
+				<Field name="username" component="input" type="text" />
 			</div>
 			<div>
 				<label htmlFor="password">password</label>
