@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from '../../assets/logo.svg';
 import './LandingPage.css';
-import RSVPForm from '../RSVPForm';
+import LoginForm from '../LoginForm';
 
 export class App extends Component {
   render() {
@@ -13,7 +13,7 @@ export class App extends Component {
           <h1>Welcome to the official <strong>STAMP</strong> wedding site!!!</h1>
         </div>
         <p className="App-intro">Coming soon!...</p>
-				<RSVPForm />
+				<LoginForm />
       </div>
     );
   }

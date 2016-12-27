@@ -1,31 +1,32 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 import Form from './RSVPFormComponent';
-import { login } from '../../actions/user';
 
-const RSVPForm = reduxForm({
-	form: 'rsvp'
+let RSVPForm = reduxForm({
+  form: 'rsvp'
 })(Form);
 
-const RSVPFormContainer = ({ login, user }) => {
-	const handleSubmit = val => {
-		login(val.username, val.password);
-	};
+const RSVPFormContainer = ({ user }) => {
+  const handleSubmit = val => {
+    console.log(val);
+  };
 
-	return (
-		<div>
-			<RSVPForm onSubmit={ handleSubmit } />
-			{ user.username ?
-				<p>Welcome, { user.username }</p> :
-				<p>Please RSVP!</p>
-			}
-			{ user.access === 'admin' ? <Link to='/guest-management'>manage guests</Link> : '' }
-		</div>
-	);
+  const initialValues = {
+    guestConfirmation: user.guestConfirmation,
+    plusOneConfirmation: user.plusOneConfirmation 
+  };
+
+  return (
+    <div>
+      <RSVPForm onSubmit={ handleSubmit } 
+        initialValues={ initialValues } 
+        user={ user }
+      />
+    </div>
+  );
 };
 
 const mapStateToProps = ({ user }) => ({ user });
-const mapDispatchToProps = { login }; 
-export default connect(mapStateToProps, mapDispatchToProps)(RSVPFormContainer);
+
+export default connect(mapStateToProps)(RSVPFormContainer);
