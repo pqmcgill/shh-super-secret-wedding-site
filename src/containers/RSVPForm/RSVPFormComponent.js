@@ -3,8 +3,7 @@ import { Field } from 'redux-form';
 import { Checkbox } from 'redux-form-material-ui';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const Form = (props) => {
-  const { handleSubmit, user } = props;
+const Form = ({ handleSubmit, user }) => {
   return (
     <form onSubmit={ handleSubmit }>
       <label htmlFor="guestConfirmation">Are you coming, { user.guestName }?</label>
@@ -16,8 +15,4 @@ const Form = (props) => {
   );
 };
 
-export default ({ user }) => {
-  return (
-    <Form user={user} />
-  );
-};
+export default Form;

@@ -1,15 +1,18 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import { updateUser, login } from '../../actions/user'; 
+
 import Form from './RSVPFormComponent';
 
 let RSVPForm = reduxForm({
   form: 'rsvp'
 })(Form);
 
-const RSVPFormContainer = ({ user }) => {
+const RSVPFormContainer = ({ user, updateUser }) => {
   const handleSubmit = val => {
-    console.log(val);
+    updateUser(user.id, val, user.token);
+    login('foo', 'bar');
   };
 
   const initialValues = {
@@ -28,5 +31,9 @@ const RSVPFormContainer = ({ user }) => {
 };
 
 const mapStateToProps = ({ user }) => ({ user });
+const mapDispatchToProps = { updateUser };
 
-export default connect(mapStateToProps)(RSVPFormContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RSVPFormContainer);

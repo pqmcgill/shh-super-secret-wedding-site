@@ -51,3 +51,23 @@ it('should subscribe to LOGIN_FAILURE and update user status', () => {
 	const nextState = users(prevState, action);
 	expect(nextState).toEqual(unauthState);
 });
+
+it('should subscribe to UPDATE_USER_SUCCESS and update user accordingly', () => {
+  const prevState = { username: 'Pat', plusOneConfirmation: true, guestConfirmation: false };
+  const action = {
+    type: 'UPDATE_USER_SUCCESS',
+    updatedUser: { username: 'Pat', plusOneConfirmation: false, guestConfirmation: true }
+  };
+  const nextState = users(prevState, action);
+  expect(nextState).toEqual(action.updatedUser);
+});
+
+it('should subscribe to UPDATE_USER_FAILURE and not update user accordingly', () => {
+  const prevState = { username: 'Pat', plusOneConfirmation: true, guestConfirmation: false };
+  const action = {
+    type: 'UPDATE_USER_FAILURE',
+    err: 'whoops!'
+  };
+  const nextState = users(prevState, action);
+  expect(nextState).toEqual(prevState);
+});
