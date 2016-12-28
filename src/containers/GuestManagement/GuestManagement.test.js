@@ -10,7 +10,7 @@ const mockStore = configureMockStore([ thunk ]);
 function setupComponent() {
   const props = {
     token: 'JWT 12345',
-    guests: [{ name: 'foo', _id: 1 }, { name: 'bar', _id: 2 }],
+    guests: [{ username: 'foo', _id: 1 }, { username: 'bar', _id: 2 }],
     addGuest: spy(),
     loadGuests: spy(),
     deleteGuest: spy()
