@@ -8,8 +8,19 @@ const Form = ({ handleSubmit, user }) => {
     <form onSubmit={ handleSubmit }>
       <label htmlFor="guestConfirmation">Are you coming, { user.guestName }?</label>
       <Field name="guestConfirmation" component={ Checkbox } />
-      <label htmlFor="plusOneConfirmation">Are you coming, { user.plusOneName }?</label>
-      <Field name="plusOneConfirmation" component={ Checkbox } />
+      { user.plusOneName.length > 0 ?
+        (
+          <div>
+            <label htmlFor="plusOneConfirmation">Are you coming, { user.plusOneName }?</label>
+            <Field name="plusOneConfirmation" component={ Checkbox } /> 
+          </div>
+        ) : (
+          <div>
+            <label htmlFor="plusOneName">add your plusOne's name here</label>
+            <Field name="plusOneName" component="input" />
+          </div>
+        )
+      }
       <RaisedButton label="Save changes" primary={true} type="submit" />
     </form>
   );
