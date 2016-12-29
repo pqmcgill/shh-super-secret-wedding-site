@@ -21,6 +21,7 @@ export default (state = unauthState, action) => {
 			};
 		case types.UNAUTHORIZED:
 		case types.LOGIN_FAILURE:
+    case types.LOGOUT:
 			return unauthState
 
     case types.UPDATE_USER_SUCCESS:

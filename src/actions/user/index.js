@@ -58,6 +58,12 @@ export const login = (username, password) => {
 	};
 };
 
+export const logout = () => {
+  return {
+    type: types.LOGOUT
+  };
+};
+
 export const updateUser = (userId, newUser, token) => {
   return dispatch => {
     dispatch(updateUserPending());

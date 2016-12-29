@@ -6,6 +6,7 @@ export const UNKNOWN = 'UNKNOWN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_PENDING = 'LOGIN_PENDING';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+export const LOGOUT = 'LOGOUT';
 export const UNAUTHORIZED = 'UNAUTHORIZED';
 export const UPDATE_USER = 'UPDATE_USER';
 export const UPDATE_USER_FAILURE = 'UPDATE_USER_FAILURE';

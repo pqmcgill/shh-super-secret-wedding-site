@@ -52,6 +52,15 @@ it('should subscribe to LOGIN_FAILURE and update user status', () => {
 	expect(nextState).toEqual(unauthState);
 });
 
+it('should subscribe to LOGOUT which returns to initial state', () => {
+  const prevState = { status: 'AUTH', username: 'Patrick' };
+  const action = {
+    type: 'LOGOUT'
+  };
+  const nextState = users(prevState, action);
+  expect(nextState).toEqual(unauthState);
+});
+
 it('should subscribe to UPDATE_USER_SUCCESS and update user accordingly', () => {
   const prevState = { username: 'Pat', plusOneConfirmation: true, guestConfirmation: false };
   const action = {

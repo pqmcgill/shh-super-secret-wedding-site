@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { loadGuests, deleteGuest, addGuest } from '../../actions/admin';
+import { logout } from '../../actions/user';
 import { getGuests } from '../../reducers/admin/guests/selectors'
 import AddGuestForm from './addGuestForm';
 
@@ -22,6 +23,7 @@ export class GuestManagement extends Component {
   constructor (props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   componentWillMount() {
@@ -30,6 +32,10 @@ export class GuestManagement extends Component {
 
   handleDelete (id) {
     this.props.deleteGuest(id, this.props.token);
+  }
+
+  logout () {
+    this.props.logout();
   }
 
   render() {
@@ -52,7 +58,7 @@ export class GuestManagement extends Component {
     });
     return (
       <Paper className="guestManagement" zDepth={1}>
-        <h2>Here you can manage your guest list</h2>
+        <h2>Here you can manage your guest list <span><button onClick={ this.logout }>Logout</button></span></h2>
 				<AddGuestForm />
         <Table selectable={false}>
           <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
@@ -85,7 +91,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   loadGuests,
   deleteGuest,
-  addGuest
+  addGuest,
+  logout
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(GuestManagement);
