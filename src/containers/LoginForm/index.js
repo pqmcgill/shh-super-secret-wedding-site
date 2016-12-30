@@ -20,19 +20,20 @@ const LoginFormContainer = ({ login, logout, user }) => {
 
 	return (
 		<div>
-			<LoginForm onSubmit={ handleSubmit } />
-			{ user.username ?
-				<p>Welcome, { user.username }</p> :
-				<p>Please login to RSVP!</p>
-			}
-      { user.token && user.access === 'admin' ? 
-        <Link to='/guest-management'>manage guests</Link> : '' 
-      }
-      { user.token && user.access === 'guest' ?
-        <Link to='/rsvp'>Click here to RSVP</Link> : ''
-      }
-      { user.token ?
-        <button onClick={ handleLogout }>Logout</button> : ''
+			{ user.status === "AUTH" ?
+        <div>
+          <p>Welcome, { user.username }</p>
+          { user.access === 'admin' ? 
+          <Link to='/guest-management'>manage guests</Link> :  
+          <Link to='/rsvp'>Click here to RSVP</Link> 
+          }
+          <button onClick={ handleLogout }>Logout</button> 
+        </div> 
+        : 
+        <div>
+          <LoginForm onSubmit={ handleSubmit } />
+          <p>Please login to RSVP!</p>
+        </div>
       }
 		</div>
 	);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { updateUser, login } from '../../actions/user'; 
+import { updateUser } from '../../actions/user'; 
 
 import Form from './RSVPFormComponent';
 
@@ -12,7 +12,6 @@ let RSVPForm = reduxForm({
 const RSVPFormContainer = ({ user, updateUser }) => {
   const handleSubmit = val => {
     updateUser(user.id, val, user.token);
-    login('foo', 'bar');
   };
 
   const initialValues = {
