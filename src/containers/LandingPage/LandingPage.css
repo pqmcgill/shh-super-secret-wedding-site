@@ -2,27 +2,80 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #003366;
   height: 150px;
   padding: 20px;
-  color: #FFF;
+	position: relative;
 }
 
-.App-header strong {
-	color: #ffbdd6;
+.App-title {
+	font-size: 6em;
+	line-height: 150px;
+	height: 150px;
+	position: absolute;
+	top: 50%;
+	left: 140px;
+	margin-top: -75px;
 }
 
-.App-intro {
-  font-size: large;
+.App-rsvp {
+	position: absolute;
+	height: 100px;
+	top: 50%;
+	right: 140px;
+	margin-top: -50px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.App-rsvp button {
+	background-color: #BB1A28;
+	color: #FFF;
+	font-size: 4em;
+	border-radius: 8px;
+	border: none;
+	font-weight: 300;
+	padding: 10px 30px;
+}
+
+.App-rsvp .deadline {
+	font-size: 1.8em;
+	font-weight: 200;
+	display: inline-block;
+	margin-left: 40px;
+	text-align: left;
+}
+
+.navBar {
+	background-color: #002040;
+	height: 55px;
+}
+
+.nav {
+	height: 50px;
+	list-style-type: none;
+	line-height: 50px;
+	font-size: 1.8em;
+	margin: 0;
+}
+
+.nav li {
+	float: left;
+	height: 50px;
+	display: block;
+	color: #FFF;
+	text-align: center;
+	padding: 0 15px;
+}
+
+.nav li:hover {
+	color: #002040;
+	background-color: #FFF;
+}
+
+@media (max-width: 1280px) {
+	.App-title {
+		font-size: 4.5em;
+	}
+	.App-rsvp button {
+		font-size: 3em;
+	}
 }
