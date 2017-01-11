@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from '../../assets/logo.svg';
+import flowerImg from '../../assets/flower1.png';
 import './LandingPage.css';
 import '../../index.css';
 import LoginForm from '../LoginForm';
@@ -19,14 +20,20 @@ export class App extends Component {
 							</div>
 						</div>
 				</div>
-				<nav className="navBar">
+				<nav className="navBar gutter">
 					<ul className="nav">
 						<li>Important Info</li>
 						<li>Registry</li>
 						<li>Contact</li>
 					</ul>
 				</nav>
+				<div className="App-body gutter">
+					<img className="flowerPic" src={ flowerImg } />
+				</div>
 				<LoginForm />
+				<div className="App-footer">
+					Think you know Sam and Pat? Take the quiz to find out
+				</div>
       </div>
     );
   }
