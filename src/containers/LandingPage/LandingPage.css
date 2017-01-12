@@ -1,17 +1,43 @@
-.App {
-  text-align: center;
+.App-body {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 20px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.flowerPic {
+	width: auto;
+	margin: 0 auto 40px auto;
+	height: 250px;
 }
 
-.App-header {
-  background-color: #003366;
-  height: 150px;
-  padding: 20px;
-  color: #FFF;
+.info-link {
+	width: 40%;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 200;
+}
+
+.App-body-rsvp {
+	width: 40%;
+	font-size: 2em;
+	font-weight: 200;
+	text-align: center;
+}
+
+.App-body-rsvp p {
+	margin: 0;
+}
+
+.App-body-rsvp button {
+	background-color: #BB1A28;
+	color: #FFF;
+	font-size: 1.75em;
+	border-radius: 8px;
+	border: none;
+	font-weight: 300;
+	padding: 10px 30px;
+	margin-bottom: 25px;
 }
 
 .App-header strong {

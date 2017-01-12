@@ -1,0 +1,67 @@
+.App-header {
+  height: 150px;
+  padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.App-title {
+	font-size: 6em;
+}
+
+.App-title a, .App-title a:link, .App-title a:visited, .App-title a:hover, .App-title a:active {
+  color: #002040;
+  text-decoration: none;
+}
+
+.App-rsvp {
+	display: flex;
+	align-items: center;
+}
+
+.App-rsvp button {
+	background-color: #BB1A28;
+	color: #FFF;
+	font-size: 4em;
+	border-radius: 8px;
+	border: none;
+	font-weight: 300;
+	padding: 10px 30px;
+}
+
+.App-rsvp .deadline {
+	font-size: 1.8em;
+	font-weight: 200;
+	margin-left: 40px;
+}
+
+.navBar {
+	background-color: #002040;
+	height: 55px;
+}
+
+.nav {
+	height: 50px;
+	list-style-type: none;
+	line-height: 50px;
+	font-size: 1.8em;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.nav li a {
+	height: 45px;
+	display: block;
+	color: #FFF;
+	text-align: center;
+	padding: 5px 15px 0 15px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+	color: #002040;
+	background-color: #FFF;
+}
