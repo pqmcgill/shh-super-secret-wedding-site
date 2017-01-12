@@ -29,11 +29,20 @@ export class App extends Component {
 				</nav>
 				<div className="App-body gutter">
 					<img className="flowerPic" src={ flowerImg } />
+					<div className="info-link">
+						<h2>Important Info</h2>
+						<p>Find directions and other important information about what to expect</p>
+					</div>
+					<div className="App-body-rsvp">
+						<button>RSVP</button>
+						<p>Don't forget to RSVP!</p>
+						<p>The deadline is May 27, 2017</p>
+					</div>
+				</div>
+				<div className="App-footer gutter">
+					Think you know Sam and Pat? Take the quiz to find out!
 				</div>
 				<LoginForm />
-				<div className="App-footer">
-					Think you know Sam and Pat? Take the quiz to find out
-				</div>
       </div>
     );
   }
