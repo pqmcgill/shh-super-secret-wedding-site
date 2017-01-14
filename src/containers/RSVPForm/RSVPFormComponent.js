@@ -8,7 +8,7 @@ const Form = ({ handleSubmit, user }) => {
     <form onSubmit={ handleSubmit }>
       <label htmlFor="guestConfirmation">Are you coming, { user.guestName }?</label>
       <Field name="guestConfirmation" component={ Checkbox } />
-      { user.plusOneName.length > 0 ?
+      { (user.plusOneName && user.plusOneName.length > 0) ?
         (
           <div>
             <label htmlFor="plusOneConfirmation">Are you coming, { user.plusOneName }?</label>

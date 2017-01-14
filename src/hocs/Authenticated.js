@@ -3,14 +3,16 @@ import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 
 export default ComposedComponent => {
-  const Authenticated = ({ authStatus, ...props }) => (
-    <div>
-      { authStatus === 'AUTH' ?
+  const Authenticated = ({ authStatus, ...props }) => {
+    return (
+      <div>
+        { authStatus === 'AUTH' ?
         <ComposedComponent { ...props } /> :
-        <Redirect to='/' />
-      }
-    </div>
-  ); 
+        <Redirect to='/welcome' />
+        }
+      </div>
+    ); 
+  };
 
   Authenticated.propTypes = {
     authStatus: PropTypes.string
