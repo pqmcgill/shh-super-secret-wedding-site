@@ -10,7 +10,8 @@ const bp2 = layouts.maxDeviceWidth('1070px');
 const styles = StyleSheet.create({
 	wrapper: {
 		...layouts.gutter,
-		...layouts.maxWidth
+		...layouts.maxWidth,
+		textAlign: 'center'
 	},
 
 	flower: {

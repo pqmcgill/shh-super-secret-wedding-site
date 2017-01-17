@@ -18,8 +18,8 @@ const bpSmall = layout.maxDeviceWidth('470px');
 export default {
 	header: {
 		height: '100px',
-		paddingTop: '20px',
-		paddingBottom: '20px',
+		paddingTop: '15px',
+		paddingBottom: '15px',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'space-between',
@@ -54,7 +54,7 @@ export default {
 		fontSize: fonts.largest,
 
 		[bpLarge]: {
-			fontSize: fonts.larger
+			fontSize: fonts.largest
 		},
 
 		[bpMed]: {
@@ -65,7 +65,7 @@ export default {
 		},
 
 		[bpSmall]: {
-			fontSize: fonts.larger,
+			fontSize: fonts.largest,
 			width: '100%'
 		}
 	},

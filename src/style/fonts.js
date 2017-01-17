@@ -1,9 +1,10 @@
-export const smaller = '1.2rem';
-export const small = '1.5rem';
+export const smaller = '1rem';
+export const small = '1.2rem';
 export const medium = '2rem';
-export const large = '2.5rem';
-export const larger = '3.5rem';
-export const largest = '4.5rem';
+export const large = '1.5rem';
+export const larger = '2rem';
+export const largerer = '2.5rem';
+export const largest = '3.5rem';
 
 export const PrincessSofia = {
 	fontFamily: 'PrincessSofia',

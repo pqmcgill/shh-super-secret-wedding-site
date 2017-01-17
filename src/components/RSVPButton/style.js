@@ -30,7 +30,7 @@ export default {
 		fontFamily: fonts.Quicksand.light,
 		backgroundColor: colors.red,
 		color: colors.white,
-		fontSize: fonts.large,
+		fontSize: fonts.larger,
 		borderRadius: '8px',
 		border: 'none',
 		padding: '5px 30px',
@@ -40,7 +40,7 @@ export default {
 		},
 
 		[bpSmall]: {
-			fontSize: '2rem'
+			fontSize: fonts.small
 		},
 
 		[bpMed]: {
@@ -48,7 +48,7 @@ export default {
 		},
 
 		[bpLarge]: {
-			fontSize: fonts.large
+			fontSize: fonts.larger
 		}
 	},
 
@@ -57,12 +57,12 @@ export default {
 	},
 
 	deadline: {
-		fontSize: fonts.small,
+		fontSize: fonts.smaller,
 		fontWeight: 200
 	},
 
 	deadlineAlignRight: {
-		fontSize: fonts.small,
+		fontSize: fonts.smaller,
 		fontWeight: 200,
 		marginLeft: '30px',
 		
