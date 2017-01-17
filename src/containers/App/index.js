@@ -1,8 +1,11 @@
-import React from 'react';
-import { Link, Match, Miss, Redirect } from 'react-router';
-import './App.css';
+import React, { Component } from 'react';
+import { Match, Miss, Redirect } from 'react-router';
+
 import AdminOnly from '../../hocs/AdminOnly';
 import Authenticated from '../../hocs/Authenticated';
+
+import Header from '../../components/Header';
+import NavBar from '../../components/NavBar';
 import LandingPage from '../LandingPage';
 import LoginForm from '../LoginForm';
 import ImportantInfo from '../ImportantInfo';
@@ -11,37 +14,57 @@ import Contact from '../Contact';
 import GuestManagement from '../GuestManagement';
 import RSVPForm from '../RSVPForm';
 
-export default (props) => (
-  <div className="App">
-    <div className="App-header gutter">
-      <div className="App-title"><Link to='/welcome'>Sam & Pat</Link></div>
-      <div className="App-rsvp">
-        <button>RSVP</button>
-        <div className="deadline">
-          <div>Deadline to RSVP</div>
-          <div>May 27, 2017</div>
-        </div>
-      </div>
-    </div>
-    <nav className="navBar gutter">
-      <ul className="nav">
-        <li><Link to='/info'>Important Info</Link></li>
-        <li><Link to='/registry'>Registry</Link></li>
-        <li><Link to='/contact'>Contact</Link></li>
-      </ul>
-    </nav>
-    <div>
-      <Match exactly pattern='/' render={() => (
-        <Redirect to='/welcome' />
-      )}/>
-      <Match pattern='/welcome' component={ LandingPage } />
-      <Match pattern='/login' component={ LoginForm } />
-      <Match pattern='/info' component={ ImportantInfo } />
-      <Match pattern='/guest-management' component={ AdminOnly(GuestManagement) }/>
-      <Match pattern='/rsvp' component={ Authenticated(RSVPForm) } />
-      <Match pattern='/registry' component={ Registry } />
-      <Match pattern='/contact' component={ Contact } />
-      <Miss component={ LandingPage } />
-    </div>
-  </div>
-);
+export default class App extends Component {
+	constructor (props) {
+		super(props);
+		this.handleScroll = this.handleScroll.bind(this);
+		this.state = {
+		 isSticky: false
+		};
+	}
+
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll(e) {
+		const headerHeight = document.getElementById('header').clientHeight;
+		const scrollTop = e.srcElement.scrollingElement.scrollTop;
+
+		if (scrollTop + 1 >= headerHeight) {
+			this.setState({
+				isSticky: true
+			});
+		} else {
+			this.setState({
+				isSticky: false
+			});
+		}
+	}
+
+	render () {
+		return (
+			<div>
+				<Header isSticky={ this.state.isSticky }/>
+				<NavBar isSticky={ this.state.isSticky }/>
+				<div>
+					<Match exactly pattern='/' render={() => (
+						<Redirect to='/welcome' />
+						)}/>
+					<Match pattern='/welcome' component={ LandingPage } />
+					<Match pattern='/login' component={ LoginForm } />
+					<Match pattern='/info' component={ ImportantInfo } />
+					<Match pattern='/guest-management' component={ AdminOnly(GuestManagement) }/>
+					<Match pattern='/rsvp' component={ Authenticated(RSVPForm) } />
+					<Match pattern='/registry' component={ Registry } />
+					<Match pattern='/contact' component={ Contact } />
+					<Miss component={ LandingPage } />
+				</div>
+			</div>
+		);
+	}
+}

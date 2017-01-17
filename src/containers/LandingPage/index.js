@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import flowerImg from '../../assets/flower1.png';
-import './LandingPage.css';
-import '../../index.css';
+import RSVPButton from '../../components/RSVPButton';
+import { css } from 'aphrodite';
+import styles from './styles';
 
 const contextTypes = {
   router: React.PropTypes.object
@@ -20,23 +21,26 @@ export class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
-				<div className="App-body gutter">
-          <img className="flowerPic" 
+			<div>
+				<div className={ css(styles.wrapper) }>
+          <img className={ css(styles.flower) } 
             src={ flowerImg } 
             role="presentation"
           />
-          <div className="info-link" onClick={ this.linkTo.bind(null, '/info') }>
-						<h2>Important Info</h2>
-						<p>Find directions and other important information about what to expect</p>
-					</div>
-					<div className="App-body-rsvp">
-            <button onClick={ this.linkTo.bind(null, '/login')}>RSVP</button>
-						<p>Don't forget to RSVP!</p>
-						<p>The deadline is May 27, 2017</p>
+					<div className={ css(styles.infoWrapper) }>
+						<div className={ css(styles.info) } onClick={ this.linkTo.bind(null, '/info') }>
+							<h2 className={ css(styles.infoHeader) }>Important Info</h2>
+							Find directions and other important information about what to expect
+						</div>
+						<div className={ css(styles.rsvp) }>
+							<RSVPButton textAlignment="bottom"
+								reminderText="Don't forget to RSVP!"
+								deadlineText="The deadline is May 27, 2017"
+							/>
+						</div>
 					</div>
 				</div>
-				<div className="App-footer gutter">
+				<div className={ css(styles.quizLink) }>
 					Think you know Sam and Pat? Take the quiz to find out!
 				</div>
       </div>
