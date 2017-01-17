@@ -4,6 +4,7 @@ import * as types from '../../../ActionTypes';
 export const byId = (state = {}, action) => {
 	const { guest, guests, _id } = action;
 	switch(action.type) {
+		case types.LOGOUT_SUCCESS:
 		case types.CLEAR_ADMIN_STATE:
 			return {};
 		case types.UPLOAD_GUESTS:
@@ -25,6 +26,7 @@ export const byId = (state = {}, action) => {
 
 export const all = (state = [], action) => {
 	switch(action.type) {
+		case types.LOGOUT_SUCCESS:
 		case types.ADD_GUEST_FAILURE:
 		case types.CLEAR_ADMIN_STATE:
 			return [];
@@ -44,6 +46,7 @@ export const all = (state = [], action) => {
 
 export const loading = (state = false, action) => {
 	switch(action.type) {
+		case types.LOGOUT_SUCCESS:
 		case types.CLEAR_ADMIN_STATE:
 		case types.ADD_GUEST:
 		case types.ADD_GUEST_FAILURE:

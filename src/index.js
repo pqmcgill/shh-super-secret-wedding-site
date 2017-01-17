@@ -5,9 +5,10 @@ import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import configureStore from './store';
 import App from './containers/App';
-import './index.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+
+import './reset.css';
 
 const initialState = {};
 const store = configureStore(initialState);

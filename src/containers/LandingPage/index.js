@@ -1,51 +1,53 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logo from '../../assets/logo.svg';
 import flowerImg from '../../assets/flower1.png';
-import './LandingPage.css';
-import '../../index.css';
-import LoginForm from '../LoginForm';
+import RSVPButton from '../../components/RSVPButton';
+import { css } from 'aphrodite';
+import styles from './styles';
+
+const contextTypes = {
+  router: React.PropTypes.object
+};
 
 export class App extends Component {
+  constructor (props, context) {
+    super(props, context);
+    this.linkTo = this.linkTo.bind(this);
+  }
+
+  linkTo (path) {
+    this.context.router.transitionTo(path);
+  }
+
 	render() {
 		return (
-			<div className="App">
-				<div className="App-header gutter">
-						<div className="App-title">Sam & Pat</div>
-						<div className="App-rsvp">
-							<button>RSVP</button>
-							<div className="deadline">
-								<div>Deadline to RSVP</div>
-								<div>May 27, 2017</div>
-							</div>
+			<div>
+				<div className={ css(styles.wrapper) }>
+          <img className={ css(styles.flower) } 
+            src={ flowerImg } 
+            role="presentation"
+          />
+					<div className={ css(styles.infoWrapper) }>
+						<div className={ css(styles.info) } onClick={ this.linkTo.bind(null, '/info') }>
+							<h2 className={ css(styles.infoHeader) }>Important Info</h2>
+							Find directions and other important information about what to expect
 						</div>
-				</div>
-				<nav className="navBar gutter">
-					<ul className="nav">
-						<li>Important Info</li>
-						<li>Registry</li>
-						<li>Contact</li>
-					</ul>
-				</nav>
-				<div className="App-body gutter">
-					<img className="flowerPic" src={ flowerImg } />
-					<div className="info-link">
-						<h2>Important Info</h2>
-						<p>Find directions and other important information about what to expect</p>
-					</div>
-					<div className="App-body-rsvp">
-						<button>RSVP</button>
-						<p>Don't forget to RSVP!</p>
-						<p>The deadline is May 27, 2017</p>
+						<div className={ css(styles.rsvp) }>
+							<RSVPButton textAlignment="bottom"
+								reminderText="Don't forget to RSVP!"
+								deadlineText="The deadline is May 27, 2017"
+							/>
+						</div>
 					</div>
 				</div>
-				<div className="App-footer gutter">
+				<div className={ css(styles.quizLink) }>
 					Think you know Sam and Pat? Take the quiz to find out!
 				</div>
-				<LoginForm />
       </div>
     );
   }
 }
+
+App.contextTypes = contextTypes;
 
 export default connect()(App);
