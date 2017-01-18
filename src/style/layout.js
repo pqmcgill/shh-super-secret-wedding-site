@@ -11,14 +11,14 @@ export const andLandscape = (val) => {
 };
 
 export const maxWidth = {
-	maxWidth: '1024px',
+	maxWidth: '1400px',
 	marginLeft: 'auto',
 	marginRight: 'auto'
 };
 
 export const gutter = {
-	paddingLeft: '160px',
-	paddingRight: '160px',
+	paddingLeft: '100px',
+	paddingRight: '100px',
 
 	[maxDeviceWidth('1070px')]: {
 		paddingLeft: '75px',
