@@ -57,12 +57,12 @@ export default {
 	},
 
 	deadline: {
-		fontSize: fonts.smaller,
+		fontSize: fonts.small,
 		fontWeight: 200
 	},
 
 	deadlineAlignRight: {
-		fontSize: fonts.smaller,
+		fontSize: fonts.small,
 		fontWeight: 200,
 		marginLeft: '30px',
 		

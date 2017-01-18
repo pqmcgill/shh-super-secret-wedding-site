@@ -4,7 +4,7 @@ export const medium = '2rem';
 export const large = '1.5rem';
 export const larger = '2rem';
 export const largerer = '2.5rem';
-export const largest = '3.5rem';
+export const largest = '4rem';
 
 export const PrincessSofia = {
 	fontFamily: 'PrincessSofia',

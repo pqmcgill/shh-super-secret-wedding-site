@@ -22,7 +22,7 @@ const styles = {
 	}, 
 
 	nav: {
-		height: '35px',
+		height: '40px',
 		lineHeight: '40px',
 		listStyleType: 'none',
 		fontSize: fonts.small,

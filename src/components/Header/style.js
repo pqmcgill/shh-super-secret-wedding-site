@@ -58,7 +58,7 @@ export default {
 		},
 
 		[bpMed]: {
-			fontSize: fonts.largest,
+			fontSize: fonts.large,
 			width: '100%',
 			textAlign: 'center',
 			marginBottom: '15px'
