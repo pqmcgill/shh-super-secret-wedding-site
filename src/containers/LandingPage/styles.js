@@ -4,13 +4,8 @@ import * as fonts from '../../style/fonts';
 import * as layouts from '../../style/layout';
 import * as colors from '../../style/colors';
 
-const bp1 = layouts.maxDeviceWidth('834px');
-const bp2 = layouts.maxDeviceWidth('1070px');
-
 const styles = StyleSheet.create({
 	wrapper: {
-		...layouts.gutter,
-		...layouts.maxWidth,
 		textAlign: 'center'
 	},
 
@@ -27,10 +22,6 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		paddingBottom: '30px',
 
-		[bp1]: {
-			flexDirection: 'column',
-			padding: '0'
-		}
 	},
 
 	info: {
@@ -39,10 +30,6 @@ const styles = StyleSheet.create({
 		fontWeight: 200,
 		fontSize: fonts.small,
 		textAlign: 'center',
-		[bp1]: {
-			width: '90%',
-			marginBottom: '40px',
-		}
 	},
 
 	infoHeader: {
@@ -54,9 +41,6 @@ const styles = StyleSheet.create({
 
 	rsvp: {
 		width: '45%',
-		[bp1]: {
-			width: '90%'
-		}
 	},
 
 	quizLink: {
@@ -67,12 +51,6 @@ const styles = StyleSheet.create({
 		fontFamily: fonts.Quicksand.regular,
 		padding: '50px 0',
 
-		[bp1]: {
-			fontSize: fonts.medium
-		},
-		[bp2]: {
-			fontSize: fonts.small
-		},
 
 	}
 });

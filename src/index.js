@@ -7,6 +7,16 @@ import configureStore from './store';
 import App from './containers/App';
 
 import './reset.css';
+import { css, StyleSheet } from 'aphrodite';
+
+//const globalStyles = StyleSheet.create({
+//	global: {
+//		fontSize: '16px',
+//		'@media (max-width: 599px)': {
+//			fontSize: '12px'
+//		}
+//	}
+//});
 
 const initialState = {};
 const store = configureStore(initialState);
