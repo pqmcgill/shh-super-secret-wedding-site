@@ -1,33 +1,37 @@
 import { StyleSheet } from 'aphrodite';
 
-import * as layout from '../../style/layout';
 import * as fonts from '../../style/fonts';
-//import * as colors from '../../style/colors';
 
 export default StyleSheet.create({
 	container: {
-		...layout.gutter,
-		...layout.maxWidth,
-		fontFamily: fonts.Quicksand.regular,
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'space-between',
-		alignItems: 'center'
+		fontFamily: fonts.Quicksand.regular
 	},
 
 	flower: {
+		marginTop: '1rem',
 		maxWidth: '100%',
 		height: 'auto',
 		marginBottom: '20px'
 	},
 
 	text: {
-		fontSize: fonts.regular,
+		fontSize: fonts.smaller,
+		fontWeight: 200,
 		textAlign: 'center'
 	},
 
 	thanks: {
 		fontFamily: fonts.PrincessSofia,
-		fontSize: fonts.larger
+		fontSize: fonts.large,
+		marginTop: 20
+	},
+
+	button: {
+		fontSize: fonts.medium
+	},
+
+	buttonText: {
+		fontSize: fonts.smallerer,
+		fontWeight: 200
 	}
 });

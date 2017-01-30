@@ -38,7 +38,7 @@ export default {
 	},
 
 	rsvpText: {
-		fontSize: '0.45em',
+		fontSize: fonts.smallerer,
 		fontWeight: 200
 	}
 };
