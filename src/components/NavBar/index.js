@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { StyleSheet, css } from 'aphrodite';
+import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import styleObject from './style';
 
 const styles = StyleSheet.create(styleObject);
@@ -12,25 +13,31 @@ const NavBar = (props) => {
 		{ position: 'static' };
 
 	return (
-		<nav className={ css(styles.navBar, styles.gutter) } style={ stickyStyle }>
-			<ul className={ css(styles.nav) }>
-				<li>
+		<div className={ css(styles.wrapper) }>
+		<Grid fluid
+			className={ css(styles.navBar) }
+			style={ stickyStyle }
+			>
+			<Row className={ css(styles.nav) } 
+				center="xs" start="md,lg">
+				<Col mdOffset={1} lgOffset={1}>
 					<Link className={ css(styles.link) } to='/info'>
 						Important Info
 					</Link>
-				</li>
-				<li>
+				</Col>
+				<Col>
 					<Link className={ css(styles.link) } to='/registry'>
 						Registry
 					</Link>
-				</li>
-				<li>
+				</Col>
+				<Col>
 					<Link className={ css(styles.link) } to='/contact'>
 						Contact
 					</Link>
-				</li>
-			</ul>
-		</nav>
+				</Col>
+			</Row>
+		</Grid>
+	</div>
 	);
 }
 

@@ -1,18 +1,19 @@
 import * as colors from '../../style/colors';
 import * as fonts from '../../style/fonts';
 
-const breakPoint1 = layout.maxDeviceWidth('930px');
-const breakPoint2 = layout.maxDeviceWidth('530px');
-
 const link = {
 	color: colors.blue,
 	textDecoration: 'none'
 };
 
 export default {
+	wrapper: {
+		display: 'box'
+	},
 
 	header: {
 		fontFamily: fonts.PrincessSofia,
+		paddingBottom: '1rem'
 	},
 
 	title: {
@@ -28,11 +29,16 @@ export default {
 
 	rsvpContainer: {
 		fontFamily: fonts.Quicksand.regular,
-		fontSize: fonts.medium
+		fontSize: fonts.medium,
+	},
+
+	rsvp: {
+		paddingTop: '1rem',
+		paddingBottom: '1rem'
 	},
 
 	rsvpText: {
 		fontSize: '0.45em',
-		textAlign: 'left'
+		fontWeight: 200
 	}
 };

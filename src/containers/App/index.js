@@ -14,6 +14,23 @@ import Contact from '../Contact';
 import GuestManagement from '../GuestManagement';
 import RSVPForm from '../RSVPForm';
 
+import { css, StyleSheet } from 'aphrodite';
+
+const style = StyleSheet.create({
+	wrapper: {
+		display: 'flex',
+		minHeight: '100vh',
+		flexDirection: 'column'
+	},
+
+	content: {
+		display: 'flex',
+		flex: 1,
+		flexDirection: 'column'
+	}
+
+});
+
 export default class App extends Component {
 	constructor (props) {
 		super(props);
@@ -48,10 +65,10 @@ export default class App extends Component {
 
 	render () {
 		return (
-			<div>
+			<div className={ css(style.wrapper) }>
 				<Header isSticky={ this.state.isSticky }/>
 				<NavBar isSticky={ this.state.isSticky }/>
-				<div>
+				<div className={ css(style.content) }>
 					<Match exactly pattern='/' render={() => (
 						<Redirect to='/welcome' />
 						)}/>
