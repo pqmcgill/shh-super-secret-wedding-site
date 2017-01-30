@@ -4636,6 +4636,10 @@ react-event-listener@^0.4.0:
     react-addons-shallow-compare "^15.4.2"
     warning "^3.0.0"
 
+react-flexbox-grid-aphrodite@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-flexbox-grid-aphrodite/-/react-flexbox-grid-aphrodite-1.0.3.tgz#506100309f96d2665c9bbbfc8b5036b588d28649"
+
 react-redux@^4.4.5:
   version "4.4.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-4.4.6.tgz#4b9d32985307a11096a2dd61561980044fcc6209"
