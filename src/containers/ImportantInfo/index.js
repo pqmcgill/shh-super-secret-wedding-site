@@ -12,13 +12,13 @@ import flower from '../../assets/flower2.png';
 export default props => (
 	<Grid>
 		<Row>
-			<Col xs={12} sm={6}>
+			<Col xs={12} sm={6} md={4} lg={4}>
 				<div className={ css(styles.map) }>
 					{/*<img className={ css(styles.map) } src={ mapImg } role="presentation"/>*/}
 					<Map />
 				</div>
 			</Col>
-			{/*<Col xs={4}>
+			<Col xs={4}>
 				<div>
 					<p>Address</p>
 					<p>12770 S Jonesville Rd</p>
@@ -36,7 +36,7 @@ export default props => (
 				<h2 className={ css(styles.header, styles.thanksHeader) }>Thank you!</h2>
 				<p>A huge thanks to Sam's Aunt Mindy and Uncle Troy for offering their home as the wedding location!</p>
 				<p>THANK YOU!</p>
-			</Col>*/}
+			</Col>
 		</Row>
 
 		<div className={ css(styles.dearGuests) }>
