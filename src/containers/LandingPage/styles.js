@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 	},
 
 	content: {
-		flex: 1
+		flex: 1,
 	},
 
 	flower: {
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
 
 	quizLink: {
 		fontSize: fonts.small,
+		fontWeight: 200,
 		backgroundColor: colors.lightPink,
 		fontFamily: fonts.Quicksand.regular,
 		paddingTop: '1em',
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
 	rsvpText: {
 		fontWeight: 200,
 		fontFamily: fonts.Quicksand.regular,
-		fontSize: fonts.smaller,
+		fontSize: fonts.smallerer,
 		paddingBottom: '1rem'
 	}
 });

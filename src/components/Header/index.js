@@ -14,7 +14,7 @@ const Header = (props) => {
 		<div className={ css(style.wrapper) }>
 			<Grid id="header" fluid className={ css(style.component, style.header) } style={ stickyStyle }>
 				<Row middle="xs" center="xs" around="sm,md,lg">
-					<Col xs={12} sm={12} md={6} lg={6}>
+					<Col xs={12} sm={12} md={6} lg={5}>
 						<div className={ css(style.title) }>
 							<Link className={ css(style.titleLink) } to='/welcome'>
 								Sam & Pat

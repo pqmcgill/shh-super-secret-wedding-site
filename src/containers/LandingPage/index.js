@@ -35,7 +35,7 @@ export class App extends Component {
 								</Col>
 							</Row>
 							<Row center="xs" middle="xs">
-								<Col xs={10} sm={6} md={4} lg={4}
+								<Col xs={11} sm={6} md={4} lg={4}
 									className={ css(styles.info) } 
 									onClick={ this.linkTo.bind(null, '/info') }
 									>
