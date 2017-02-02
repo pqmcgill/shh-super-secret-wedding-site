@@ -8,11 +8,11 @@ export default () => {
 			39.0891859,
 			-85.8804074
 		],
-		zoom: 9,
+		zoom: 10,
 		options (maps) {
 			return {
 				zoomControlOptions: {
-					position: maps.ControlPosition.RIGHT_CENTER,
+					position: maps.ControlPosition.RIGHT_BOTTOM,
 					style: maps.ZoomControlStyle.SMALL
 				},
 				mapTypeControlOptions: {
