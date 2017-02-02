@@ -9,7 +9,7 @@ const styles = StyleSheet.create(styleObject);
 const NavBar = (props) => {
 
 	const stickyStyle = props.isSticky ?
-		{ position: 'fixed', top: 0, left: 0, right: 0 } :
+		{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1 } :
 		{ position: 'static' };
 
 	return (

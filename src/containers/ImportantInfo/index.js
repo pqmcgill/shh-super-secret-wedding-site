@@ -1,36 +1,44 @@
 import React from 'react';
 import { css } from 'aphrodite';
 import styles from './style';
+import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 
 import RSVPButton from '../../components/RSVPButton';
+import Map from '../../components/Map';
 
 import mapImg from '../../assets/map.png';
 import flower from '../../assets/flower2.png';
 
 export default props => (
-	<div className={ css(styles.container) }>
-		<div className={ css(styles.infoWrapper) }>
-		  <img className={ css(styles.map) } src={ mapImg } role="presentation"/>
-		  <div className={ css(styles.reference) }>
-		  	<div>
-		  		<p>Address</p>
-		  		<p>12770 S Jonesville Rd</p>
-		  		<p>Columbus, IN 47201</p>
-		  		<p>*Jonesville Rd is also IN-11*</p>
-		  	</div>
-		  	<div>
-		  		<p>Contact</p>
-		  		<p>Sam's Cell: 812-343-8556</p>
-		  		<p>Troy Hill: 812-343-0370</p>
-		  		<p>Mindy Hill: 812-390-1140</p>
-		  	</div>
-		  </div>
-		  <div className={ css(styles.thanks) }>
+	<Grid>
+		<Row>
+			<Col xs={12} sm={6}>
+				<div className={ css(styles.map) }>
+					{/*<img className={ css(styles.map) } src={ mapImg } role="presentation"/>*/}
+					<Map />
+				</div>
+			</Col>
+			{/*<Col xs={4}>
+				<div>
+					<p>Address</p>
+					<p>12770 S Jonesville Rd</p>
+					<p>Columbus, IN 47201</p>
+					<p>*Jonesville Rd is also IN-11*</p>
+				</div>
+				<div>
+					<p>Contact</p>
+					<p>Sam's Cell: 812-343-8556</p>
+					<p>Troy Hill: 812-343-0370</p>
+					<p>Mindy Hill: 812-390-1140</p>
+				</div>
+			</Col>
+			<Col xs={4} className={ css(styles.thanks) }>
 				<h2 className={ css(styles.header, styles.thanksHeader) }>Thank you!</h2>
-		  	<p>A huge thanks to Sam's Aunt Mindy and Uncle Troy for offering their home as the wedding location!</p>
-		  	<p>THANK YOU!</p>
-		  </div>
-		</div>
+				<p>A huge thanks to Sam's Aunt Mindy and Uncle Troy for offering their home as the wedding location!</p>
+				<p>THANK YOU!</p>
+			</Col>*/}
+		</Row>
+
 		<div className={ css(styles.dearGuests) }>
 			<h1 className={ css(styles.header, styles.salutation) }>Dear Friends and Family</h1>
 			<p>
@@ -56,7 +64,7 @@ export default props => (
 				<li>Indy Bound: Book a hotel on SR 46 in Columbus. It's right off the interstate.</li>
 				<li>Louisville Bound: Book a hotel in Seymour. It's right off the interstate... Columbus has more to offer</li>
 			</ul>
-			<h3 className={ css(styles.centered) }>
+			<h3>
 				There will not be a designated shuttle. If you plan to drink, plan accordingly.
 				We want everyone to be safe.
 			</h3>
@@ -73,17 +81,13 @@ export default props => (
 				Check it out!
 			</p>
 
-			<p className={ css(styles.centered) }>Let us know if you have any questions, especially if our website doesn't have the answers.</p>
-			<h4 className={ css(styles.header, styles.regards, styles.centered)}>Love, <br /> Sam and Pat</h4>
+			<p>Let us know if you have any questions, especially if our website doesn't have the answers.</p>
+			<h4 className={ css(styles.header, styles.regards)}>Love, <br /> Sam and Pat</h4>
 		</div>
 		<div className={ css(styles.flowerWrapper) }>
-			<RSVPButton
-				textAlignment="bottom"
-				reminderText="Don't forget to RSVP!"
-				deadlineText="The deadline is May 27, 2017"
-			/>
-			<img className={ css(styles.flower) } src={ flower } role="presentation" />
+			<RSVPButton />
+			<img src={ flower } role="presentation" />
 		</div>
-	</div>
+	</Grid>
 
 );
