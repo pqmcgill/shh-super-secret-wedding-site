@@ -3,42 +3,14 @@ import * as fonts from '../../style/fonts';
 import * as colors from '../../style/colors';
 import * as layout from '../../style/layout';
 
-const infoDiv = {
-	padding: '15px',
-	width: '30%',
-
-	fontFamily: fonts.Quicksand.regular
-};
-
 const styles = {
-	container: {
-		...layout.gutter,
-		...layout.maxWidth
-	},
-
-	infoWrapper: {
-		display: 'flex',
-		justifyContent: 'space-between',
-		padding: '20px'
-	},
-
 	map: {
-		...infoDiv
-	},
-
-	reference: {
-		...infoDiv
+		width: '100%',
+		height: '20em'
 	},
 
 	thanks: {
-		...infoDiv,
-
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-
-		fontSize: fonts.small,
+		fontSize: fonts.smaller,
 		backgroundColor: colors.lightPink,
 		borderRadius: '10px',
 	},
@@ -49,32 +21,21 @@ const styles = {
 	},
 
 	thanksHeader: {
-		fontSize: fonts.larger
+		fontSize: fonts.large
 	},
 
 	dearGuests: {
 		fontFamily: fonts.Quicksand.regular,
-		fontSize: fonts.small
+		fontSize: fonts.smaller
 	},
 
 	salutation: {
-		fontSize: fonts.larger
+		fontSize: fonts.large
 	},
 
 	regards: {
-		fontSize: fonts.larger
+		fontSize: fonts.large
 	},
-
-	centered: {
-		textAlign: 'center'
-	},
-
-	flowerWrapper: {
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		justifyContent: 'space-between'
-	}
 };
 
 export default StyleSheet.create(styles);
