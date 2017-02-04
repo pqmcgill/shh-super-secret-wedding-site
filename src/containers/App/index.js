@@ -8,7 +8,8 @@ import Header from '../../components/Header';
 import NavBar from '../../components/NavBar';
 import LandingPage from '../LandingPage';
 import LoginForm from '../LoginForm';
-import ImportantInfo from '../ImportantInfo';
+import FAQ from '../FAQ';
+import Location from '../Location';
 import Registry from '../Registry';
 import Contact from '../Contact';
 import GuestManagement from '../GuestManagement';
@@ -41,6 +42,10 @@ export default class App extends Component {
 		};
 	}
 
+	shouldComponentUpdate() {
+		return false;
+	}
+
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
 	}
@@ -65,6 +70,7 @@ export default class App extends Component {
 	}
 
 	render () {
+		console.log('rendered');
 		return (
 			<div className={ css(style.wrapper) }>
 				<Header isSticky={ this.state.isSticky }/>
@@ -75,7 +81,8 @@ export default class App extends Component {
 						)}/>
 					<Match pattern='/welcome' component={ LandingPage } />
 					<Match pattern='/login' component={ LoginForm } />
-					<Match pattern='/info' component={ ImportantInfo } />
+					<Match pattern='/location' component={ Location } />
+					<Match pattern='/faq' component={ FAQ } />
 					<Match pattern='/guest-management' component={ AdminOnly(GuestManagement) }/>
 					<Match pattern='/rsvp' component={ Authenticated(RSVPForm) } />
 					<Match pattern='/registry' component={ Registry } />
