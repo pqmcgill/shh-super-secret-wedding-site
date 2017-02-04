@@ -3,7 +3,6 @@ import * as fonts from '../../style/fonts';
 
 export default {
 	button: {
-		fontFamily: fonts.Quicksand.light,
 		backgroundColor: colors.red,
 		color: colors.white,
 		borderRadius: '8px',

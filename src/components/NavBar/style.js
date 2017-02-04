@@ -8,7 +8,6 @@ const styles = {
 	},
 
 	navBar: {
-		fontFamily: fonts.Quicksand.regular,
 		backgroundColor: colors.blue,
 		height: '40px',
 	}, 

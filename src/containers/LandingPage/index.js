@@ -36,14 +36,14 @@ export class App extends Component {
 							</Row>
 							<Row center="xs" middle="xs">
 								<Col xs={11} sm={6} md={4} lg={4}
-									className={ css(styles.info) } 
+									className={ css(styles.info) + ' quicksandLight' } 
 									onClick={ this.linkTo.bind(null, '/info') }
 									>
-									<h2 className={ css(styles.infoHeader) }>Important Info</h2>
+									<h2 className={ css(styles.infoHeader) + ' quicksandMedium' }>Important Info</h2>
 									Find directions and other important information about what to expect
 								</Col>
 								<Col xs={10} sm={6} md={4} lg={4}> 
-									<Row center="xs" className={ css(styles.rsvp) }>
+									<Row center="xs" className={ css(styles.rsvp) + ' quicksandRegular' }>
 										<Col>
 											<RSVPButton textAlignment="bottom"
 												reminderText="Don't forget to RSVP!"
@@ -51,7 +51,7 @@ export class App extends Component {
 											/>
 										</Col>
 									</Row>
-									<Row center="xs" className={ css(styles.rsvpText) }>
+									<Row center="xs" className={ css(styles.rsvpText) + ' quicksandRegular' }>
 										<Col>
 											Don't forget to RSVP!
 										</Col>
@@ -65,7 +65,7 @@ export class App extends Component {
 					</div>
 				</div>
 				<div className={ css(styles.quizWrapper) }>
-					<Grid fluid className={ css(styles.quizLink) }>
+					<Grid fluid className={ css(styles.quizLink) + ' quicksandRegular' }>
 						<Row center="xs">
 							<Col xs={12}>
 								Think you know Sam and Pat? Take the quiz to find out!

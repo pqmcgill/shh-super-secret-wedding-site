@@ -12,7 +12,7 @@ const Header = (props) => {
 		 
 	return (
 		<div className={ css(style.wrapper) }>
-			<Grid id="header" fluid className={ css(style.component, style.header) } style={ stickyStyle }>
+			<Grid id="header" fluid className={ `${css(style.component, style.header)} princessSofia` } style={ stickyStyle }>
 				<Row middle="xs" center="xs" around="sm,md,lg">
 					<Col xs={12} sm={12} md={6} lg={5}>
 						<div className={ css(style.title) }>
@@ -22,7 +22,7 @@ const Header = (props) => {
 						</div>
 					</Col>
 					<Col xs={12} sm={6} md={6} lg={6} >
-						<div className={ css(style.rsvpContainer) }>
+						<div className={ `${css(style.rsvpContainer)} quicksandRegular` }>
 							<Row middle="xs,sm,md,lg" end="sm,md,lg">
 								<Col xs={12} sm={6} md={6} lg={6}
 									className={ css(style.rsvp) }

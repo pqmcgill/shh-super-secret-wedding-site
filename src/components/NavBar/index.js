@@ -15,7 +15,7 @@ const NavBar = (props) => {
 	return (
 		<div className={ css(styles.wrapper) }>
 		<Grid fluid
-			className={ css(styles.navBar) }
+			className={ css(styles.navBar) + ' quicksandRegular' }
 			style={ stickyStyle }
 			>
 			<Row className={ css(styles.nav) } 

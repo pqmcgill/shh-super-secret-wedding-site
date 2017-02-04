@@ -8,10 +8,6 @@ const styles = {
 		height: '20em'
 	},
 
-	address: {
-		fontFamily: fonts.Quicksand.regular,
-	},
-
 	thanks: {
 		fontSize: fonts.smaller,
 		backgroundColor: colors.lightPink,
@@ -19,7 +15,6 @@ const styles = {
 	},
 
 	header: {
-		fontFamily: fonts.PrincessSofia,
 		fontWeight: 400
 	},
 
@@ -28,7 +23,6 @@ const styles = {
 	},
 
 	dearGuests: {
-		fontFamily: fonts.Quicksand.regular,
 		fontSize: fonts.smaller
 	},
 
