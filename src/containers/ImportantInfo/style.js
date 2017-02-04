@@ -1,12 +1,15 @@
 import { StyleSheet } from 'aphrodite';
 import * as fonts from '../../style/fonts';
 import * as colors from '../../style/colors';
-import * as layout from '../../style/layout';
 
 const styles = {
 	map: {
 		width: '100%',
 		height: '20em'
+	},
+
+	address: {
+		fontFamily: fonts.Quicksand.regular,
 	},
 
 	thanks: {

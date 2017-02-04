@@ -1,9 +1,6 @@
 import { StyleSheet } from 'aphrodite';
 import * as colors from '../../style/colors';
 
-const K_WIDTH = 30;
-const K_HEIGHT = 30;
-
 const bounce = {
 	'0%': {
 		opacity: 0,

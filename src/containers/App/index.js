@@ -18,6 +18,7 @@ import { css, StyleSheet } from 'aphrodite';
 
 const style = StyleSheet.create({
 	wrapper: {
+		overflowX: 'hidden',
 		display: 'flex',
 		minHeight: '100vh',
 		flexDirection: 'column'

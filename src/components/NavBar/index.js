@@ -21,8 +21,13 @@ const NavBar = (props) => {
 			<Row className={ css(styles.nav) } 
 				center="xs" start="md,lg">
 				<Col mdOffset={1} lgOffset={1}>
+					<Link className={ css(styles.link) } to='/'>
+						Location
+					</Link>
+				</Col>
+				<Col>
 					<Link className={ css(styles.link) } to='/info'>
-						Important Info
+						FAQ
 					</Link>
 				</Col>
 				<Col>
