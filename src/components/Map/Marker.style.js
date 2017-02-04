@@ -47,6 +47,7 @@ export default StyleSheet.create({
 		animationName: bounce,
 		animationFillMode: 'both',
 		animationDuration: '1s',
+		animationDelay: '1s',
 
 		':after': {
 			content: '""',
@@ -84,7 +85,7 @@ export default StyleSheet.create({
 			animationIterationCount: 'infinite',
 			opacity: '0.0',
 			boxShadow: '0 0 1px 2px #89849b',
-			animationDelay: '1.1s'
+			animationDelay: '2.1s'
 		}
 	}
 

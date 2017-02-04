@@ -4,7 +4,6 @@ import * as fonts from '../../style/fonts';
 
 export default StyleSheet.create({
 	container: {
-		fontFamily: fonts.Quicksand.regular
 	},
 
 	flower: {
@@ -21,7 +20,6 @@ export default StyleSheet.create({
 	},
 
 	thanks: {
-		fontFamily: fonts.PrincessSofia,
 		fontSize: fonts.large,
 		marginTop: 20
 	},

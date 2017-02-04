@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
 	},
 
 	info: {
-		fontFamily: fonts.Quicksand.light,
 		fontWeight: 200,
 		fontSize: fonts.smaller,
 		textAlign: 'center',
@@ -34,7 +33,6 @@ const styles = StyleSheet.create({
 	},
 
 	infoHeader: {
-		fontFamily: fonts.Quicksand.medium,
 		fontSize: fonts.medium,
 		fontWeight: 400,
 		margin: '0 0 20px 0'
@@ -48,7 +46,6 @@ const styles = StyleSheet.create({
 		fontSize: fonts.small,
 		fontWeight: 200,
 		backgroundColor: colors.lightPink,
-		fontFamily: fonts.Quicksand.regular,
 		paddingTop: '1em',
 		paddingBottom: '1em'
 	},
@@ -56,13 +53,11 @@ const styles = StyleSheet.create({
 	rsvp: {
 		fontSize: fonts.medium,
 		textAlign: 'center',
-		fontFamily: fonts.Quicksand.regular,
 		paddingBottom: '1rem'
 	},
 
 	rsvpText: {
 		fontWeight: 200,
-		fontFamily: fonts.Quicksand.regular,
 		fontSize: fonts.smallerer,
 		paddingBottom: '1rem'
 	}

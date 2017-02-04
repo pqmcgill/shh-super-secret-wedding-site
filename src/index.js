@@ -7,6 +7,7 @@ import configureStore from './store';
 import App from './containers/App';
 
 import './reset.css';
+import './style/fonts.css';
 
 const initialState = {};
 const store = configureStore(initialState);

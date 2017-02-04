@@ -8,7 +8,7 @@ import flower2 from '../../assets/flower2.png';
 import styles from './style';
 
 export default props => (
-	<Grid fluid className={ css(styles.container )}>
+	<Grid fluid className={ css(styles.container ) + ' quicksandRegular'}>
 		<Row center="xs">
 			<Col>
 				<img 
@@ -25,7 +25,7 @@ export default props => (
 		</Row>
 		<Row center="xs">
 			<Col>
-				<p className={ css(styles.thanks) }>Thanks!</p>
+				<p className={ css(styles.thanks) + ' princessSofia' }>Thanks!</p>
 			</Col>
 		</Row>
 		<Row center="xs" className={ css(styles.button) }>

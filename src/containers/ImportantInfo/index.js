@@ -17,7 +17,7 @@ export default props => (
 				</div>
 			</Col>
 			<Col xs={12} sm={12} md={4} lg={4}
-				className={ css(styles.address) }
+				className='quicksandRegular'
 				>
 				<Row center="xs">
 					<Col xs={6} md={12}>
@@ -36,13 +36,13 @@ export default props => (
 			</Col>
 			<Col xs={0} sm={0} md={4} lg={4} 
 				className={ css(styles.thanks) }>
-				<h2 className={ css(styles.header, styles.thanksHeader) }>Thank you!</h2>
+				<h2 className={ css(styles.header, styles.thanksHeader) + ' princessSofia' }>Thank you!</h2>
 				<p>A huge thanks to Sam's Aunt Mindy and Uncle Troy for offering their home as the wedding location!</p>
 				<p>THANK YOU!</p>
 			</Col>
 		</Row>
 
-		<div className={ css(styles.dearGuests) }>
+		<div className={ css(styles.dearGuests) + ' quicksandRegular' }>
 			<h1 className={ css(styles.header, styles.salutation) }>Dear Friends and Family</h1>
 			<p>
 				If you are flying in, we suggest these airports: <br /><br />

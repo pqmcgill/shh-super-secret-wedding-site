@@ -7,7 +7,7 @@ const styles = StyleSheet.create(style);
 const RSVPButton = () => {
 	return (
 		<div>
-			<button className={ css(styles.button) }>
+			<button className={ `${css(styles.button)} quicksandLight` }>
 				RSVP
 			</button>
 		</div>

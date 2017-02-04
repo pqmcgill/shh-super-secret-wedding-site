@@ -12,7 +12,6 @@ export default {
 	},
 
 	header: {
-		fontFamily: fonts.PrincessSofia,
 		paddingBottom: '1rem'
 	},
 
@@ -28,7 +27,6 @@ export default {
 	},
 
 	rsvpContainer: {
-		fontFamily: fonts.Quicksand.regular,
 		fontSize: fonts.medium,
 	},
 
