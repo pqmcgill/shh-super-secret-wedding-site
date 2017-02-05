@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import flowerImg from '../../assets/flower1.png';
 import flower2Img from '../../assets/flower2.png';
-import stampImg from '../../assets/stamp2.jpg';
-import RSVPButton from '../../components/RSVPButton';
 import { css } from 'aphrodite';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import styles from './styles';

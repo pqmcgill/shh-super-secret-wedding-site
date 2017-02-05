@@ -3,10 +3,10 @@ import { css } from 'aphrodite';
 import styles from './style';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 
-import RSVPButton from '../../components/RSVPButton';
+//import RSVPButton from '../../components/RSVPButton';
 import Map from '../../components/Map';
 
-import flower from '../../assets/flower2.png';
+//import flower from '../../assets/flower2.png';
 
 export default props => (
 	<div>
