@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Match, Miss, Redirect } from 'react-router';
+import { Route, Redirect, Switch } from 'react-router-dom';
 
 import AdminOnly from '../../hocs/AdminOnly';
 import Authenticated from '../../hocs/Authenticated';
@@ -42,10 +42,6 @@ export default class App extends Component {
 		};
 	}
 
-	shouldComponentUpdate() {
-		return false;
-	}
-
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
 	}
@@ -70,25 +66,31 @@ export default class App extends Component {
 	}
 
 	render () {
-		console.log('rendered');
 		return (
 			<div className={ css(style.wrapper) }>
-				<Header isSticky={ this.state.isSticky }/>
-				<NavBar isSticky={ this.state.isSticky }/>
-				<div className={ css(style.content) }>
-					<Match exactly pattern='/' render={() => (
-						<Redirect to='/welcome' />
-						)}/>
-					<Match pattern='/welcome' component={ LandingPage } />
-					<Match pattern='/login' component={ LoginForm } />
-					<Match pattern='/location' component={ Location } />
-					<Match pattern='/faq' component={ FAQ } />
-					<Match pattern='/guest-management' component={ AdminOnly(GuestManagement) }/>
-					<Match pattern='/rsvp' component={ Authenticated(RSVPForm) } />
-					<Match pattern='/registry' component={ Registry } />
-					<Match pattern='/contact' component={ Contact } />
-					<Miss component={ LandingPage } />
-				</div>
+				<Switch>
+					<Route path='/login' render={() => <h1>Login</h1>} />
+					<Route path='/rsvp' render={() => <h1>Rsvp</h1>} />
+					<Route render={() => 
+						<div>
+							<Header isSticky={ this.state.isSticky }/>
+							<NavBar isSticky={ this.state.isSticky }/>
+							<div className={ css(style.content) }>
+								<Route exactly pattern='/' render={() => (
+									<Redirect to='/welcome' />
+									)}/>
+								<Route path='/welcome' component={ LandingPage } />
+								<Route path='/login' component={ LoginForm } />
+								<Route path='/location' component={ Location } />
+								<Route path='/faq' component={ FAQ } />
+								<Route path='/guest-management' component={ AdminOnly(GuestManagement) }/>
+								<Route path='/rsvp' component={ Authenticated(RSVPForm) } />
+								<Route path='/registry' component={ Registry } />
+								<Route path='/contact' component={ Contact } />
+							</div>
+						</div>
+					} />
+				</Switch>
 			</div>
 		);
 	}

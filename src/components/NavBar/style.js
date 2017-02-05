@@ -8,8 +8,10 @@ const styles = {
 	},
 
 	navBar: {
+		width: '100%',
 		backgroundColor: colors.blue,
 		height: '40px',
+		transition: 'box-shadow 0.3s cubic-bezier(.25,.8,.25,1)'
 	}, 
 
 	nav: {

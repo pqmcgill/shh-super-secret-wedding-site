@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import styles from './style';

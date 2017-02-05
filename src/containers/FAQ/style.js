@@ -15,14 +15,27 @@ const styles = {
 	},
 
 	header: {
-		fontWeight: 400
+		fontWeight: 400,
+
+		'@media (max-width: 456px)': {
+			textAlign: 'center'
+		}
 	},
 
 	thanksHeader: {
 		fontSize: fonts.large
 	},
 
+	indented: {
+		paddingLeft: '2em'
+	},
+
+	centered: {
+		textAlign: 'center'
+	},
+
 	dearGuests: {
+		padding: '0 1em',
 		fontSize: fonts.smaller
 	},
 
@@ -32,6 +45,22 @@ const styles = {
 
 	regards: {
 		fontSize: fonts.large
+	},
+
+	button: {
+		fontSize: fonts.medium
+	},
+
+	buttonText: {
+		fontSize: fonts.smallerer,
+		fontWeight: 200
+	},
+
+	flower: {
+		marginTop: '1rem',
+		maxWidth: '100%',
+		height: 'auto',
+		marginBottom: '20px'
 	},
 };
 

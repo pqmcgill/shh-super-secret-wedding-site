@@ -2,6 +2,7 @@ import { StyleSheet } from 'aphrodite';
 
 import * as fonts from '../../style/fonts';
 import * as colors from '../../style/colors';
+import stampImg from '../../assets/stamp.jpg';
 
 const styles = StyleSheet.create({
 	wrapper: {
@@ -16,10 +17,17 @@ const styles = StyleSheet.create({
 
 	content: {
 		flex: 1,
+		minHeight: '80vh',
+		'@media (max-width: 768px)': {
+			minHeight: '400px'
+		}
 	},
 
 	flower: {
 		marginTop: '1rem',
+	},
+
+	img: {
 		maxWidth: '100%',
 		height: 'auto',
 		marginBottom: '20px'
@@ -44,7 +52,6 @@ const styles = StyleSheet.create({
 
 	quizLink: {
 		fontSize: fonts.small,
-		fontWeight: 200,
 		backgroundColor: colors.lightPink,
 		paddingTop: '1em',
 		paddingBottom: '1em'
@@ -60,6 +67,20 @@ const styles = StyleSheet.create({
 		fontWeight: 200,
 		fontSize: fonts.smallerer,
 		paddingBottom: '1rem'
+	},
+
+	parallax: {
+		backgroundAttachment: 'fixed',
+		backgroundPosition: 'center',
+		backgroundRepeat: 'no-repeat',
+		backgroundSize: 'cover',
+		backgroundImage: `url(${stampImg})`,
+		height: '70vh',
+
+		'@media (max-width: 768px)': {
+			height: '400px'
+		}
+
 	}
 });
 

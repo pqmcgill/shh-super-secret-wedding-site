@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import flowerImg from '../../assets/flower1.png';
+import flower2Img from '../../assets/flower2.png';
+import stampImg from '../../assets/stamp2.jpg';
 import RSVPButton from '../../components/RSVPButton';
 import { css } from 'aphrodite';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import styles from './styles';
 
 const contextTypes = {
-  router: React.PropTypes.object
+	router: React.PropTypes.object
 };
 
 export class App extends Component {
@@ -28,44 +30,36 @@ export class App extends Component {
 						<Grid fluid> 
 							<Row center="xs">
 								<Col>
-									<img className={ css(styles.flower) } 
+									<img className={ css(styles.flower, styles.img) } 
 										src={ flowerImg } 
 										role="presentation"
 									/>
 								</Col>
 							</Row>
 							<Row center="xs" middle="xs">
-								<Col xs={11} sm={6} md={4} lg={4}
+								<Col xs={12}
 									className={ css(styles.info) + ' quicksandLight' } 
 									onClick={ this.linkTo.bind(null, '/info') }
 									>
-									<h2 className={ css(styles.infoHeader) + ' quicksandMedium' }>Important Info</h2>
-									Find directions and other important information about what to expect
+									<h2 className={ css(styles.infoHeader) + ' quicksandRegular' }>June 10, 2017 4:30pm</h2>
 								</Col>
-								<Col xs={10} sm={6} md={4} lg={4}> 
-									<Row center="xs" className={ css(styles.rsvp) + ' quicksandRegular' }>
-										<Col>
-											<RSVPButton textAlignment="bottom"
-												reminderText="Don't forget to RSVP!"
-												deadlineText="The deadline is May 27, 2017"
-											/>
-										</Col>
-									</Row>
-									<Row center="xs" className={ css(styles.rsvpText) + ' quicksandRegular' }>
-										<Col>
-											Don't forget to RSVP!
-										</Col>
-										<Col>
-											The deadline is May 27, 2017
-										</Col>
-									</Row>
+							</Row>
+							<Row center="xs">
+								<Col xs={6}>
+									<img className={ css(styles.flower, styles.flower2, styles.img) }
+										src={ flower2Img }
+										role="presentation"
+									/>
 								</Col>
 							</Row>
 						</Grid>
 					</div>
 				</div>
+				<div className={ css(styles.parallax) }>
+
+				</div>
 				<div className={ css(styles.quizWrapper) }>
-					<Grid fluid className={ css(styles.quizLink) + ' quicksandRegular' }>
+					<Grid fluid className={ css(styles.quizLink) + ' quicksandMedium' }>
 						<Row center="xs">
 							<Col xs={12}>
 								Think you know Sam and Pat? Take the quiz to find out!
@@ -75,9 +69,9 @@ export class App extends Component {
 				</div>
 			</div>
 		);
-					}
-					}
+	}
+}
 
-					App.contextTypes = contextTypes;
+App.contextTypes = contextTypes;
 
-					export default connect()(App);
+export default connect()(App);

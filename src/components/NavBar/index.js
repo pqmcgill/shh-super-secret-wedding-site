@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import styleObject from './style';
@@ -7,14 +7,22 @@ import styleObject from './style';
 const styles = StyleSheet.create(styleObject);
 
 const NavBar = (props) => {
-
 	const stickyStyle = props.isSticky ?
-		{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1 } :
-		{ position: 'static' };
+		{ 
+			position: 'fixed', 
+			top: 0, 
+			left: 0, 
+			right: 0, 
+			zIndex: 1,
+			boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
+		} :
+		{ 
+			position: 'static' 
+		};
 
 	return (
 		<div className={ css(styles.wrapper) }>
-		<Grid fluid
+		<Grid
 			className={ css(styles.navBar) + ' quicksandRegular' }
 			style={ stickyStyle }
 			>

@@ -30,11 +30,7 @@ export default props => (
 		</Row>
 		<Row center="xs" className={ css(styles.button) }>
 			<Col>
-				<RSVPButton 
-					textAlignment="bottom"
-					reminderText="Don't forget to RSVP!"
-					deadlineText="The deadline is May 27, 2017"
-				/>
+				<RSVPButton /> 
 			</Col>
 		</Row>
 		<Row center="xs" className={ css(styles.buttonText) }>

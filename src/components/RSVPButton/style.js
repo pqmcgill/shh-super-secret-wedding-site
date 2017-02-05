@@ -1,5 +1,4 @@
 import * as colors from '../../style/colors';
-import * as fonts from '../../style/fonts';
 
 export default {
 	button: {

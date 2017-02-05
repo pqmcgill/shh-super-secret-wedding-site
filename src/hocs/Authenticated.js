@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 export default ComposedComponent => {
