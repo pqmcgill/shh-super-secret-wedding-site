@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import AdminOnly from '../../hocs/AdminOnly';
 import Authenticated from '../../hocs/Authenticated';
@@ -71,22 +71,22 @@ export default class App extends Component {
 				<Switch>
 					<Route path='/login' render={() => <h1>Login</h1>} />
 					<Route path='/rsvp' render={() => <h1>Rsvp</h1>} />
-					<Route render={() => 
+					<Route render={() =>
 						<div>
 							<Header isSticky={ this.state.isSticky }/>
 							<NavBar isSticky={ this.state.isSticky }/>
 							<div className={ css(style.content) }>
-								<Route exactly pattern='/' render={() => (
-									<Redirect to='/welcome' />
-									)}/>
-								<Route path='/welcome' component={ LandingPage } />
-								<Route path='/login' component={ LoginForm } />
-								<Route path='/location' component={ Location } />
-								<Route path='/faq' component={ FAQ } />
-								<Route path='/guest-management' component={ AdminOnly(GuestManagement) }/>
-								<Route path='/rsvp' component={ Authenticated(RSVPForm) } />
-								<Route path='/registry' component={ Registry } />
-								<Route path='/contact' component={ Contact } />
+								<Switch>
+									<Route path='/login' component={ LoginForm } />
+									<Route path='/location' component={ Location } />
+									<Route path='/faq' component={ FAQ } />
+									<Route path='/guest-management' component={ AdminOnly(GuestManagement) }
+									/>
+									<Route path='/rsvp' component={ Authenticated(RSVPForm) } />
+									<Route path='/registry' component={ Registry } />
+									<Route path='/contact' component={ Contact } />
+									<Route component={ LandingPage } />
+								</Switch>
 							</div>
 						</div>
 					} />

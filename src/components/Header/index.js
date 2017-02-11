@@ -9,7 +9,7 @@ const style = StyleSheet.create(styles);
 
 const Header = (props) => {
 	const stickyStyle = props.isSticky ? { marginTop: '40px' } : {};
-		 
+
 	return (
 		<div className={ css(style.wrapper) }>
 			<Grid id="header" fluid className={ `${css(style.component, style.header)} princessSofia` } style={ stickyStyle }>
@@ -26,8 +26,8 @@ const Header = (props) => {
 							<Row middle="xs,sm,md,lg" end="sm,md,lg">
 								<Col xs={12} sm={6} md={6} lg={6}
 									className={ css(style.rsvp) }
-									>
-									<RSVPButton 
+								>
+									<RSVPButton
 										reminderText="Deadline to RSVP"
 										deadlineText="May 27, 2017"
 									/>
