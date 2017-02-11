@@ -8,16 +8,16 @@ const styles = StyleSheet.create(styleObject);
 
 const NavBar = (props) => {
 	const stickyStyle = props.isSticky ?
-		{ 
-			position: 'fixed', 
-			top: 0, 
-			left: 0, 
-			right: 0, 
+		{
+			position: 'fixed',
+			top: 0,
+			left: 0,
+			right: 0,
 			zIndex: 1,
 			boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
 		} :
-		{ 
-			position: 'static' 
+		{
+			position: 'static'
 		};
 
 	return (
@@ -26,7 +26,7 @@ const NavBar = (props) => {
 			className={ css(styles.navBar) + ' quicksandRegular' }
 			style={ stickyStyle }
 			>
-			<Row className={ css(styles.nav) } 
+			<Row className={ css(styles.nav) }
 				center="xs" start="md,lg">
 				<Col mdOffset={1} lgOffset={1}>
 					<Link className={ css(styles.link) } to='/location'>
