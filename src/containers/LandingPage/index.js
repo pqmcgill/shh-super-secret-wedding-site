@@ -25,20 +25,20 @@ export class App extends Component {
 			<div className={ css(styles.wrapper) }>
 				<div className={ css(styles.content) }>
 					<div className={ css(styles.antiWrapper) }>
-						<Grid fluid> 
+						<Grid fluid>
 							<Row center="xs">
 								<Col>
-									<img className={ css(styles.flower, styles.img) } 
-										src={ flowerImg } 
+									<img className={ css(styles.flower, styles.img) }
+										src={ flowerImg }
 										role="presentation"
 									/>
 								</Col>
 							</Row>
 							<Row center="xs" middle="xs">
 								<Col xs={12}
-									className={ css(styles.info) + ' quicksandLight' } 
+									className={ css(styles.info) + ' quicksandLight' }
 									onClick={ this.linkTo.bind(null, '/info') }
-									>
+								>
 									<h2 className={ css(styles.infoHeader) + ' quicksandRegular' }>June 10, 2017 4:30pm</h2>
 								</Col>
 							</Row>
