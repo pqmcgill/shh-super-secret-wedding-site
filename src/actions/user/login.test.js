@@ -41,12 +41,13 @@ describe('User', () => {
 
 		const expectedActions = [
 			{ type: types.LOGIN_PENDING },
-			{ type: types.LOGIN_FAILURE, err: failure_res }
+			{ type: types.LOGIN_FAILURE }
 		];
 
 		const store = mockStore({ user: null });
 		return store.dispatch(actions.login(user.name, user.password))
-			.then(() => {
+			.catch(() => {
+				console.log('here');
 				expect(store.getActions()).toEqual(expectedActions);
 			});
 	});
@@ -59,12 +60,12 @@ describe('User', () => {
 
 		const expectedActions = [
 			{ type: types.LOGIN_PENDING },
-			{ type: types.LOGIN_FAILURE, err: { msg: 'internal server error' }}
+			{ type: types.LOGIN_FAILURE }
 		];
 
 		const store = mockStore({ user: null });
 		return store.dispatch(actions.login(user.name, user.password))
-			.then(() => {
+			.catch(() => {
 				expect(store.getActions()).toEqual(expectedActions);
 			});
 	});

@@ -8,6 +8,7 @@ export default {
 		border: 'none',
 		padding: '5px 30px',
 		fontSize: '1em',
+		textDecoration: 'none',
 
 		':hover': {
 			backgroundColor: colors.darkRed

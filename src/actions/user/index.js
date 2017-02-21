@@ -7,10 +7,9 @@ const loginSuccess = user => {
 	};
 };
 
-const loginFailure = err => {
+const loginFailure = () => {
 	return {
-		type: types.LOGIN_FAILURE,
-		err
+		type: types.LOGIN_FAILURE
 	};
 };
 
@@ -50,11 +49,17 @@ export const login = (username, password) => {
 		})
 		.then(res => res.json())
 		.then(data => {
-			return data.success ?
-				dispatch(loginSuccess(data.user)) :
-				dispatch(loginFailure(data));
+			console.log('here');
+			if (data.success) {
+				return dispatch(loginSuccess(data.user));
+			} else {
+				throw new Error(data.msg);
+			}
 		})
-		.catch(err => dispatch(loginFailure(err)));
+		.catch(err => {
+			return dispatch(loginFailure());
+			throw err;
+		});
 	};
 };
 
@@ -69,8 +74,8 @@ export const updateUser = (userId, newUser, token) => {
     dispatch(updateUserPending());
     return fetch(`http://localhost:4000/api/user/${userId}`, {
       method: 'PUT',
-      headers: { 
-        'Content-Type': 'application/json', 
+      headers: {
+        'Content-Type': 'application/json',
         'Authorization': token
       },
       body: JSON.stringify(newUser)

@@ -1,7 +1,12 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { updateUser, login } from '../../actions/user'; 
+import { updateUser, login } from '../../actions/user';
+import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
+import { css } from 'aphrodite';
+import flower1 from '../../assets/flower1.png';
+import flower2 from '../../assets/flower2.png';
+import styles from './styles';
 
 import Form from './RSVPFormComponent';
 
@@ -17,16 +22,29 @@ const RSVPFormContainer = ({ user, updateUser }) => {
 
   const initialValues = {
     guestConfirmation: user.guestConfirmation,
-    plusOneConfirmation: user.plusOneConfirmation 
+    plusOneConfirmation: user.plusOneConfirmation
   };
 
   return (
-    <div>
-      <RSVPForm onSubmit={ handleSubmit } 
-        initialValues={ initialValues } 
-        user={ user }
+    <Grid fluid>
+      <Row center="xs">
+  			<Col>
+  				<img
+  					className={ css(styles.flower) }
+  					src={ flower1 }
+            role="presentation"
       />
-    </div>
+  			</Col>
+  		</Row>
+      <Row>
+        <Col xs={12}>
+          <RSVPForm onSubmit={ handleSubmit }
+            initialValues={ initialValues }
+            user={ user }
+          />
+        </Col>
+      </Row>
+    </Grid>
   );
 };
 

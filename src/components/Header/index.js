@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, css } from 'aphrodite';
+import { Switch, Route } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import styles from './style';
 import RSVPButton from '../RSVPButton';
@@ -27,10 +28,15 @@ const Header = (props) => {
 								<Col xs={12} sm={6} md={6} lg={6}
 									className={ css(style.rsvp) }
 								>
-									<RSVPButton
-										reminderText="Deadline to RSVP"
-										deadlineText="May 27, 2017"
-									/>
+									<Switch>
+										<Route path='/rsvp'/>
+										<Route render={ () =>
+											<RSVPButton
+												reminderText="Deadline to RSVP"
+												deadlineText="May 27, 2017"
+											/>
+										} />
+									</Switch>
 								</Col>
 								<Col xs={12} sm={6} md={6} lg={6}>
 									<Row center="xs" start="sm,md,lg">

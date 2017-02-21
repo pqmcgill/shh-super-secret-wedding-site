@@ -69,15 +69,13 @@ export default class App extends Component {
 		return (
 			<div className={ css(style.wrapper) }>
 				<Switch>
-					<Route path='/login' render={() => <h1>Login</h1>} />
-					<Route path='/rsvp' render={() => <h1>Rsvp</h1>} />
+					<Route path='/login' component={ LoginForm } />
 					<Route render={() =>
 						<div>
 							<Header isSticky={ this.state.isSticky }/>
 							<NavBar isSticky={ this.state.isSticky }/>
 							<div className={ css(style.content) }>
 								<Switch>
-									<Route path='/login' component={ LoginForm } />
 									<Route path='/location' component={ Location } />
 									<Route path='/faq' component={ FAQ } />
 									<Route path='/guest-management' component={ AdminOnly(GuestManagement) }

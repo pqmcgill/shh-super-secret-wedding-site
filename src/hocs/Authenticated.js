@@ -4,14 +4,15 @@ import { connect } from 'react-redux';
 
 export default ComposedComponent => {
   const Authenticated = ({ authStatus, ...props }) => {
+    console.log(authStatus);
     return (
       <div>
         { authStatus === 'AUTH' ?
-        <ComposedComponent { ...props } /> :
-        <Redirect to='/welcome' />
+          <ComposedComponent { ...props } /> :
+          <Redirect to='/login' />
         }
       </div>
-    ); 
+    );
   };
 
   Authenticated.propTypes = {
@@ -21,6 +22,6 @@ export default ComposedComponent => {
   const mapStateToProps = state => ({
     authStatus: state.user.status
   });
-  
+
   return connect(mapStateToProps)(Authenticated);
 };
