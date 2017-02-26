@@ -3,8 +3,8 @@ import { reduxForm, Field } from 'redux-form';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import { css } from 'aphrodite';
 import styles from './styles';
-import flowerImg from '../../assets/flower1.png';
-import flower2Img from '../../assets/flower2.png';
+import flowerImg from '../../assets/flower1.webp';
+import flower2Img from '../../assets/flower2.webp';
 import RSVPButton from '../../components/RSVPButton';
 
 const ContactForm = ({ handleSubmit, reset }) => {

@@ -7,8 +7,9 @@
     "fetch-mock": "^5.5.0",
     "nock": "^8.1.0",
     "react-addons-test-utils": "^15.3.2",
-    "react-scripts": "0.6.1",
-    "sinon": "^1.17.6"
+    "react-scripts": "^0.9.0",
+    "sinon": "^1.17.6",
+    "sw-precache": "^5.0.0"
   },
   "dependencies": {
     "aphrodite": "^1.1.0",
@@ -31,8 +32,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && sw-precache --root='build/' --static-file-globs='build/**/!(*map*)'",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "homepage": "./"
 }

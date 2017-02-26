@@ -58,7 +58,6 @@ export const login = (username, password) => {
 		})
 		.catch(err => {
 			return dispatch(loginFailure());
-			throw err;
 		});
 	};
 };

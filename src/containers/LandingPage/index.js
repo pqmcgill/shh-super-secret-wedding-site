@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import flowerImg from '../../assets/flower1.png';
-import flower2Img from '../../assets/flower2.png';
+import flowerImg from '../../assets/flower1.webp';
+import flower2Img from '../../assets/flower2.webp';
 import { css } from 'aphrodite';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import styles from './styles';

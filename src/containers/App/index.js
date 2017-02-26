@@ -3,17 +3,83 @@ import { Route, Switch } from 'react-router-dom';
 
 import AdminOnly from '../../hocs/AdminOnly';
 import Authenticated from '../../hocs/Authenticated';
+import asyncComponent from '../../hocs/asyncComponent';
 
 import Header from '../../components/Header';
 import NavBar from '../../components/NavBar';
+
 import LandingPage from '../LandingPage';
-import LoginForm from '../LoginForm';
-import FAQ from '../FAQ';
-import Location from '../Location';
-import Registry from '../Registry';
-import Contact from '../Contact';
-import GuestManagement from '../GuestManagement';
-import RSVPForm from '../RSVPForm';
+// import LoginForm from '../LoginForm';
+// import FAQ from '../FAQ';
+// import Location from '../Location';
+// import Registry from '../Registry';
+// import Contact from '../Contact';
+// import GuestManagement from '../GuestManagement';
+// import RSVPForm from '../RSVPForm';
+
+// const LandingPage = asyncComponent(() => {
+// 	return new Promise((res) => {
+// 		require.ensure('../LandingPage', () => {
+// 			res(require('../LandingPage').default);
+// 		});
+// 	});
+// });
+
+const RSVPForm = asyncComponent(() => {
+	return new Promise((res) => {
+		require.ensure('../RSVPForm', () => {
+			res(require('../RSVPForm').default);
+		});
+	});
+});
+
+const GuestManagement = asyncComponent(() => {
+	return new Promise((res) => {
+		require.ensure('../GuestManagement', () => {
+			res(require('../GuestManagement').default);
+		});
+	});
+});
+
+const Contact = asyncComponent(() => {
+	return new Promise((res) => {
+		require.ensure('../Contact', () => {
+			res(require('../Contact').default);
+		});
+	});
+});
+
+const Registry = asyncComponent(() => {
+	return new Promise((res) => {
+		require.ensure('../Registry', () => {
+			res(require('../Registry').default);
+		});
+	});
+});
+
+const Location = asyncComponent(() => {
+	return new Promise((res) => {
+		require.ensure('../Location', () => {
+			res(require('../Location').default);
+		});
+	});
+});
+
+const LoginForm = asyncComponent(() => {
+	return new Promise((res) => {
+		require.ensure('../LoginForm', () => {
+			res(require('../LoginForm').default);
+		});
+	});
+});
+
+const FAQ = asyncComponent(() => {
+	return new Promise((res) => {
+		require.ensure('../FAQ', () => {
+			res(require('../FAQ').default);
+		});
+	});
+});
 
 import { css, StyleSheet } from 'aphrodite';
 

@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { updateUser, login } from '../../actions/user';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 import { css } from 'aphrodite';
-import flower1 from '../../assets/flower1.png';
-import flower2 from '../../assets/flower2.png';
+import flower1 from '../../assets/flower1.webp';
 import styles from './styles';
 
 import Form from './RSVPFormComponent';

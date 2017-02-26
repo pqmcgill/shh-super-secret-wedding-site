@@ -2,7 +2,7 @@ import { StyleSheet } from 'aphrodite';
 
 import * as fonts from '../../style/fonts';
 import * as colors from '../../style/colors';
-import stampImg from '../../assets/stamp.jpg';
+import stampImg from '../../assets/stamp.webp';
 
 const styles = StyleSheet.create({
 	wrapper: {

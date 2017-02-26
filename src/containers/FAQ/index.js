@@ -5,7 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 
 import RSVPButton from '../../components/RSVPButton';
 
-import flower from '../../assets/flower2.png';
+import flower from '../../assets/flower2.webp';
 
 export default props => (
 	<Grid className="quicksandRegular">

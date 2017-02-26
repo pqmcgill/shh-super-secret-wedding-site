@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 import { Row, Col } from 'react-flexbox-grid-aphrodite';
 import { css } from 'aphrodite';
 import styles from './styles';
-import radioCheck from '../../style/radioCheck.css';
+// import radioCheck from '../../style/radioCheck.css';
 
 const Form = ({ handleSubmit, user }) => {
   console.log(user);

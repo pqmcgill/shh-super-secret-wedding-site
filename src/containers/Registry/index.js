@@ -3,8 +3,8 @@ import { css } from 'aphrodite';
 import { Grid, Row, Col } from 'react-flexbox-grid-aphrodite';
 
 import RSVPButton from '../../components/RSVPButton';
-import flower1 from '../../assets/flower1.png';
-import flower2 from '../../assets/flower2.png';
+import flower1 from '../../assets/flower1.webp';
+import flower2 from '../../assets/flower2.webp';
 import styles from './style';
 
 export default props => (
