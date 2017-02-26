@@ -5,6 +5,7 @@
   "devDependencies": {
     "enzyme": "^2.4.1",
     "fetch-mock": "^5.5.0",
+    "gh-pages": "^0.12.0",
     "nock": "^8.1.0",
     "react-addons-test-utils": "^15.3.2",
     "react-scripts": "^0.9.0",
@@ -34,7 +35,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build && sw-precache --root='build/' --static-file-globs='build/**/!(*map*)'",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
   },
-  "homepage": "./"
+  "homepage": "https://pqmcgill.github.io/shh-super-secret-wedding-site/"
 }
