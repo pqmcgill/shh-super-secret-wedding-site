@@ -42,7 +42,7 @@ const updateUserPending = () => {
 export const login = (username, password) => {
 	return dispatch => {
 		dispatch(loginPending());
-		return fetch('http://localhost:4000/api/user/authenticate', {
+		return fetch('/api/user/authenticate', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username, password })
@@ -71,7 +71,7 @@ export const logout = () => {
 export const updateUser = (userId, newUser, token) => {
   return dispatch => {
     dispatch(updateUserPending());
-    return fetch(`http://localhost:4000/api/user/${userId}`, {
+    return fetch(`/api/user/${userId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

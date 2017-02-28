@@ -17,7 +17,7 @@ describe('User', () => {
 	});
 
 	it('should have login action which makes successful api call to get user data dispatches success action', () => {
-		fetchMock.post('http://localhost:4000/api/user/authenticate', {
+		fetchMock.post('/api/user/authenticate', {
 			body: { success: true, user: success_res }
 		});
 
@@ -34,7 +34,7 @@ describe('User', () => {
 	});
 
 	it('should dispatch login failure action upon unauthorized call', () => {
-		fetchMock.post('http://localhost:4000/api/user/authenticate', {
+		fetchMock.post('/api/user/authenticate', {
 			status: 401,
 			body: { success: false }
 		});
@@ -53,7 +53,7 @@ describe('User', () => {
 	});
 
 	it('should dispatch login failure action upon server error', () => {
-		fetchMock.post('http://localhost:4000/api/user/authenticate', {
+		fetchMock.post('/api/user/authenticate', {
 			status: 500,
 			throws: { msg: 'internal server error' }
 		});

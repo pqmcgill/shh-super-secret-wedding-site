@@ -14,7 +14,7 @@ const addGuestSuccess = (guest) => {
 };
 
 const addGuestFailure = () => {
-	return { 
+	return {
 		type: types.ADD_GUEST_FAILURE
 	};
 };
@@ -51,7 +51,7 @@ const deleteGuestFailure = (err) => {
 export const loadGuests = (token) => {
 	return dispatch => {
 		dispatch(requestPending());
-		fetch('http://localhost:4000/api/user', {
+		fetch('/api/user', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -67,9 +67,9 @@ export const loadGuests = (token) => {
 export const addGuest = (guest, token) => {
 	return dispatch => {
 		dispatch(requestPending());
-		fetch('http://localhost:4000/api/user', {
+		fetch('/api/user', {
 			method: 'POST',
-			headers: { 
+			headers: {
 				'Content-Type': 'application/json',
 				'Authorization': token
 			},
@@ -96,7 +96,7 @@ export const clearGuests = () => {
 export const deleteGuest = (_id, token) => {
 	return dispatch => {
 		dispatch(requestPending());
-		fetch('http://localhost:4000/api/user/' + _id, {
+		fetch('/api/user/' + _id, {
 			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',

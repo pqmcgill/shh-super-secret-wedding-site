@@ -20,7 +20,7 @@ describe('Admin Guest Management', () => {
 	});
 
 	it('should have a loadGuests action which makes api call to get guests and dispatches success action', () => {
-		fetchMock.get('http://localhost:4000/api/user', {
+		fetchMock.get('/api/user', {
 			body: { success: true, guests }
 		});
 
@@ -38,9 +38,9 @@ describe('Admin Guest Management', () => {
 				}
 			}
 		});
-    
-    ///////////////TODO: figure out why this is undefined vvv 
+
+    ///////////////TODO: figure out why this is undefined vvv
 		console.log('TODO: figure out why this is undefined', JSON.stringify(store.dispatch(actions.loadGuests())));
     expect(true).toEqual(true);
-	}); 
+	});
 });

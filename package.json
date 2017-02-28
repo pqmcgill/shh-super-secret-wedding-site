@@ -33,11 +33,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "PUBLIC_URL='/' react-scripts build && sw-precache --root='build/' --navigateFallback='/404.html' --static-file-globs='build/**/!(*map*)'",
+    "build": "react-scripts build && sw-precache --root='build/' --navigateFallback='/404.html' --static-file-globs='build/**/!(*map*)'",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://pqmcgill.github.io/shh-super-secret-wedding-site"
+  "homepage": "https://pqmcgill.github.io/shh-super-secret-wedding-site",
+  "proxy": "http://localhost:4000"
 }

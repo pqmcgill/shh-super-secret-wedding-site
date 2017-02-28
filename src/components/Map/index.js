@@ -4,6 +4,9 @@ import Marker from './Marker';
 
 export default () => {
 	const props = {
+		bootstrapURLKeys: {
+			key: process.env.REACT_APP_GOOGLE_API_KEY
+		},
 		center: [
 			39.0891859,
 			-85.8804074
@@ -30,7 +33,7 @@ export default () => {
 	};
 	return (
 		<GoogleMap { ...props }>
-			<Marker 
+			<Marker
 				lat={markerCoords.lat}
 				lng={markerCoords.lng} />
 		</GoogleMap>
