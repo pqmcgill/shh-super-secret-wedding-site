@@ -7,11 +7,11 @@ import * as actions from './';
 
 const middleware = [ thunk ];
 const mockStore = configureMockStore(middleware);
-const user = { 
+const user = {
   id: '12345',
-  username: 'Pat', 
-  password: 'foo', 
-  guestConfirmation: false, 
+  username: 'Pat',
+  password: 'foo',
+  guestConfirmation: false,
   plusOneConfirmation: false
 };
 
@@ -36,7 +36,7 @@ describe('RSVP', () => {
       plusOneConfirmation: false
     };
 
-    fetchMock.put(`http://localhost:4000/api/user/12345`, {
+    fetchMock.put(`/api/user/12345`, {
       body: success_res
     });
 
@@ -63,7 +63,7 @@ describe('RSVP', () => {
       foo: 'bar'
     };
 
-    fetchMock.put(`http://localhost:4000/api/user/12345`, {
+    fetchMock.put(`/api/user/12345`, {
       body: failure_res
     });
 
